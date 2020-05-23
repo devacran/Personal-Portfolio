@@ -1,0 +1,172 @@
+@import './__global.styl'
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap')
+
+$primaryFont = 'Roboto', sans-serif
+$primaryFont = 'Roboto', sans-serif
+
+$primaryColor = #E5E4C0
+$secondaryColor = #96946E
+$lightColor = #EFEFEF
+$darkColor = #171717
+
+$navbarHeight = 50px
+
+
+
+SubTitle($color)
+  margin-bottom: 1em
+  font-size: 28px
+  font-family: $primaryFont
+  if $color == '1'
+    color: $primaryColor
+  if $color == '2'
+    color: $darkColor
+
+PageMargin()
+  padding: 0 15px
+
+SectionMargin()
+  padding-top: $navbarHeight
+
+.expandHeight
+    animation: expandHeight 1s forwards
+    clip-path: inset(100% 0px)
+    opacity: 0
+
+@keyframes expandHeight{
+  to{
+    clip-path: inset(0px 0px)
+    opacity: 100
+  }
+}
+
+mobileWidth = 320px
+mobilePotraitWidth = 636px
+tabletWidth = 720px
+tabletPotraitWidth = 840px
+deskWidth = 1023px
+
+mqMobile = "only screen and (min-width: " + mobileWidth + ")"
+mqTablet     = "only screen and (min-width: " + tabletWidth + ")"
+mqDesk     = "only screen and (max-width: " + deskWidth + ")"
+mqTabletPotrait = "only screen and (max-width: " + tabletPotraitWidth + ")"
+mqMobilePotrait = "only screen and (max-width: " + mobilePotraitWidth + ")"
+
+
+
+Title($color)
+  margin-bottom: 1em
+  font-size: 36px
+  font-family: $secondaryFont
+  font-weight: bold
+  if $color == '1'
+    color: $primaryColor
+  if $color == '2'
+    color: $darkColor
+
+body
+  max-width: 1080px
+  margin: 0 auto
+ul
+  display: flex
+  list-style: none
+  padding: 0
+
+main
+  position: relative
+
+.navbar
+  display: grid
+  grid-template-columns: 1fr 1fr
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  height: $navbarHeight
+  PageMargin()
+  background-color: $darkColor
+  color: $primaryColor
+  z-index: 3
+  @media mqTablet
+    grid-template-columns: 1fr 2fr 1fr
+  ul:first-child
+    li:last-child
+      margin-left: 1em
+    justify-content: flex-start
+  ul:nth-child(2)
+    display: none
+    justify-content: space-evenly
+    @media mqTablet
+      display: flex
+  ul:last-child
+    justify-content: flex-end
+
+.right-border
+  height: auto
+  width: 3px
+  margin-right: 1em
+  background-color: $primaryColor
+
+.main-section
+  PageMargin()
+  SectionMargin()
+  background-color: $darkColor
+  color: $primaryColor
+  height: 100vh
+
+.hero
+  margin: 30vh 0
+  &__container
+    display: flex
+
+.section-title
+  SubTitle(1)
+
+.portfolio
+  PageMargin()
+  SectionMargin()
+  background-color: $lightColor
+  position: relative;
+  overflow: hidden;
+  height: 100vw
+
+//carousel para imagenes de 5:3
+.carousel
+  top: 150px
+  left: 0
+  right: 0
+  position: absolute
+  &__overlay
+    position: absolute;
+    left: 0
+    right: 0
+    bottom: 0
+    top: 0
+  &__central
+    margin: auto;
+    height: calc(100vw * 0.5)
+    background-color: #3F51B5;
+    clip-path: inset(0 20%) //modificar la proporcion de la imagen
+    div
+      height: 100%;
+      width: 60%;
+      margin: 0 auto;
+      img
+        width: 100%;
+        height: -webkit-fill-available;
+  &__container
+    position: absolute;
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    margin: auto
+    height: calc(100vw * 0.3)
+    background-color: #f0f;
+    //clip-path: inset(0 20%)
+
+
+.skills
+    PageMargin()
+    SectionMargin()
+    background-color: $darkColor

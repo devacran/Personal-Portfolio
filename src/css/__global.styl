@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap')
+
+$primaryFont = font-family: 'Roboto', sans-serif
+$secondaryFont
+
+
+
+SubTitle($color)
+  margin-bottom: 1em
+  font-size: 28px
+  font-family: $primaryFont
+  if $color == '1'
+    color: $primaryColor
+  if $color == '2'
+    color: $darkColor
+
+PageMargin()
+  padding: 0 15px
+
+SectionMargin()
+  padding-top: $navbarHeight
+
+.expandHeight
+    animation: expandHeight 1s forwards
+    clip-path: inset(100% 0px)
+    opacity: 0
+
+@keyframes expandHeight{
+  to{
+    clip-path: inset(0px 0px)
+    opacity: 100
+  }
+}
+
+mobileWidth = 320px
+mobilePotraitWidth = 636px
+tabletWidth = 720px
+tabletPotraitWidth = 840px
+deskWidth = 1023px
+
+mqMobile = "only screen and (min-width: " + mobileWidth + ")"
+mqTablet     = "only screen and (min-width: " + tabletWidth + ")"
+mqDesk     = "only screen and (max-width: " + deskWidth + ")"
+mqTabletPotrait = "only screen and (max-width: " + tabletPotraitWidth + ")"
+mqMobilePotrait = "only screen and (max-width: " + mobilePotraitWidth + ")"
