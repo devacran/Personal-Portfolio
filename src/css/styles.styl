@@ -147,13 +147,19 @@ main
     height: calc(100vw * 0.5)
     background-color: #3F51B5;
     clip-path: inset(0 20%) //modificar la proporcion de la imagen
+  &__strip
+    display: flex
+    height: 100%
+    width: fit-content
+    position: relative;
+    left: -40%;
     div
-      height: 100%;
-      width: 60%;
-      margin: 0 auto;
+      height: 100%
+      width: 60vw
+      margin: 0 auto
       img
-        width: 100%;
-        height: -webkit-fill-available;
+        width: 100%
+        height: -webkit-fill-available
   &__container
     position: absolute;
     top: 0

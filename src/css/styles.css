@@ -127,12 +127,20 @@ main {
   -webkit-clip-path: inset(0 20%);
           clip-path: inset(0 20%);
 }
-.carousel__central div {
+.carousel__strip {
+  display: flex;
   height: 100%;
-  width: 60%;
+  width: -webkit-fit-content;
+  width: fit-content;
+  position: relative;
+  left: -40%;
+}
+.carousel__strip div {
+  height: 100%;
+  width: 60vw;
   margin: 0 auto;
 }
-.carousel__central div img {
+.carousel__strip div img {
   width: 100%;
   height: -webkit-fill-available;
 }
