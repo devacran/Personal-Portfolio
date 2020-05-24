@@ -34,20 +34,35 @@
       <section class="portfolio">
         <div class="section-title">Proyectos</div>
         <div class="carousel">
-          <div class="carousel__container"></div>
-          <div class="carousel__central">
-            <div class="carousel__strip">
+          <div class="carousel__container">
+            <div class="carousel__overlay"></div>
+            <div class="carousel__strip carousel__strip-small" id="carouselSmall">
               <div><img src="src/images/blog1.jpg"></div>
               <div><img src="src/images/blog2.jpg"></div>
               <div><img src="src/images/blog1.jpg"></div>
               <div><img src="src/images/blog1.jpg"></div>
+              <div><img src="src/images/blog2.jpg"></div>
+              <div><img src="src/images/blog1.jpg"></div>
+            </div>
+          </div>
+          <div class="carousel__central">
+            <div class="carousel__strip" id="carouselBig">
+              <div><img src="src/images/blog1.jpg"></div>
+              <div><img src="src/images/blog2.jpg"></div>
+              <div><img src="src/images/blog1.jpg"></div>
+              <div><img src="src/images/blog1.jpg"></div>
+              <div><img src="src/images/blog2.jpg"></div>
+              <div><img src="src/images/blog1.jpg"></div>
             </div>
           </div>
         </div>
+        <button id="forward">adelante</button>
+        <button id="backward">atras</button>
       </section>
       <section class="skills">
         <div class="section-title">Relevant Skills</div>
       </section>
     </main>
   </body>
+  <script src="src/js/script.js"></script>
 </html>

@@ -119,13 +119,27 @@ main {
   right: 0;
   bottom: 0;
   top: 0;
+  background-color: rgba(21,21,21,0.64);
+  z-index: 2;
 }
 .carousel__central {
   margin: auto;
-  height: calc(100vw * 0.5);
+  height: 70vw;
   background-color: #3f51b5;
-  -webkit-clip-path: inset(0 20%);
-          clip-path: inset(0 20%);
+  -webkit-clip-path: inset(0 10vw);
+          clip-path: inset(0 10vw);
+}
+@media only screen and (min-width: 320px) {
+  .carousel__central {
+    max-height: 400px;
+    max-width: 572px;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  .carousel__central {
+    -webkit-clip-path: inset(0 57px);
+            clip-path: inset(0 57px);
+  }
 }
 .carousel__strip {
   display: flex;
@@ -133,26 +147,42 @@ main {
   width: -webkit-fit-content;
   width: fit-content;
   position: relative;
-  left: -40%;
+  left: -71%;
+  transition: 1s;
 }
 .carousel__strip div {
   height: 100%;
-  width: 60vw;
+  width: 80.5vw;
+  max-width: 459.99999999999994px;
   margin: 0 auto;
 }
 .carousel__strip div img {
   width: 100%;
   height: -webkit-fill-available;
+  object-fit: fill;
 }
 .carousel__container {
+  height: 42vw;
+  max-height: 400px;
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   margin: auto;
-  height: calc(100vw * 0.3);
   background-color: #f0f;
+  z-index: 0;
+}
+.carousel__strip-small {
+  left: -25%;
+}
+@media only screen and (min-width: 1000px) {
+  .carousel__strip-small {
+    left: -178px;
+  }
+}
+.carousel__strip-small div {
+  width: 50.4vw;
 }
 .skills {
   padding: 0 15px;

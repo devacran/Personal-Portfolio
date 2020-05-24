@@ -44,12 +44,12 @@ mobileWidth = 320px
 mobilePotraitWidth = 636px
 tabletWidth = 720px
 tabletPotraitWidth = 840px
-deskWidth = 1023px
+deskWidth = 1000px
 
 mqMobile = "only screen and (min-width: " + mobileWidth + ")"
 mqTablet     = "only screen and (min-width: " + tabletWidth + ")"
-mqDesk     = "only screen and (max-width: " + deskWidth + ")"
-mqTabletPotrait = "only screen and (max-width: " + tabletPotraitWidth + ")"
+mqDesk     = "only screen and (min-width: " + deskWidth + ")"
+mqTabletPotrait = "only screen and (min-width: " + tabletPotraitWidth + ")"
 mqMobilePotrait = "only screen and (max-width: " + mobilePotraitWidth + ")"
 
 
@@ -131,6 +131,8 @@ main
   height: 100vw
 
 //carousel para imagenes de 5:3
+$carouselHeight = 100vw * 0.7
+$carouselContainerHeight = $carouselHeight * 0.6 //modificar el alto de la imagen
 .carousel
   top: 150px
   left: 0
@@ -142,36 +144,53 @@ main
     right: 0
     bottom: 0
     top: 0
+    background-color: rgba(21, 21, 21, 0.64)
+    z-index: 2
   &__central
     margin: auto;
-    height: calc(100vw * 0.5)
+    height: $carouselHeight
     background-color: #3F51B5;
-    clip-path: inset(0 20%) //modificar la proporcion de la imagen
+    clip-path: inset(0 10vw) //modificar el ancho de la imagen
+    @media mqMobile
+      max-height: 400px
+      max-width: 572px
+    @media mqDesk
+      clip-path: inset(0 57px)
+
   &__strip
     display: flex
     height: 100%
     width: fit-content
     position: relative;
-    left: -40%;
+    left: -71%; //para centrar la tira de imagenes
+    transition: 1s
     div
       height: 100%
-      width: 60vw
+      width: $carouselHeight * 1.15
+      max-width: 400px * 1.15
       margin: 0 auto
       img
         width: 100%
         height: -webkit-fill-available
+        object-fit: fill
   &__container
+    height: $carouselContainerHeight
+    max-height: 400px
     position: absolute;
     top: 0
     bottom: 0
     left: 0
     right: 0
     margin: auto
-    height: calc(100vw * 0.3)
     background-color: #f0f;
-    //clip-path: inset(0 20%)
+    z-index: 0
 
-
+.carousel__strip-small
+  left: -25%
+  @media mqDesk
+    left: -178px
+  div
+    width: $carouselContainerHeight * 1.2
 .skills
     PageMargin()
     SectionMargin()

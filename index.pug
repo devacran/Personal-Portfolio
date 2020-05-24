@@ -31,10 +31,8 @@ html
         .section-title Proyectos
         .carousel
           .carousel__container
-            //- .carousel__overlay
-            //-   |holis
-          .carousel__central
-            .carousel__strip
+            .carousel__overlay
+            .carousel__strip.carousel__strip-small#carouselSmall
               div
                 img(src='src/images/blog1.jpg')
               div
@@ -43,10 +41,32 @@ html
                 img(src='src/images/blog1.jpg')
               div
                 img(src='src/images/blog1.jpg')
-          
+              div
+                img(src='src/images/blog2.jpg')
+              div
+                img(src='src/images/blog1.jpg')
+
+          .carousel__central
+            .carousel__strip#carouselBig
+              div
+                img(src='src/images/blog1.jpg')
+              div
+                img(src='src/images/blog2.jpg')
+              div
+                img(src='src/images/blog1.jpg')
+              div
+                img(src='src/images/blog1.jpg')
+              div
+                img(src='src/images/blog2.jpg')
+              div
+                img(src='src/images/blog1.jpg')
+              
+
+        button#forward adelante
+        button#backward atras
         
       section.skills
         .section-title Relevant Skills
-        
-        
+  script(src='src/js/script.js')
+  
       
