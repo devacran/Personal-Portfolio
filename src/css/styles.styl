@@ -1,17 +1,21 @@
 @import './__global.styl'
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap')
 
-$primaryFont = 'Roboto', sans-serif
-$primaryFont = 'Roboto', sans-serif
+$primaryFont = 'Roboto'
+$secondaryFont ='Prompt'
 
 $primaryColor = #E5E4C0
 $secondaryColor = #96946E
 $lightColor = #EFEFEF
 $darkColor = #171717
 
+$text-content = #848484
 $navbarHeight = 50px
 
 
+TextContent()
+  color: $text-content
+  font-size: 18px
+  font-weight: 400
 
 SubTitle($color)
   margin-bottom: 1em
@@ -56,9 +60,9 @@ mqMobilePotrait = "only screen and (max-width: " + mobilePotraitWidth + ")"
 
 Title($color)
   margin-bottom: 1em
+  text-align: center
   font-size: 36px
   font-family: $secondaryFont
-  font-weight: bold
   if $color == '1'
     color: $primaryColor
   if $color == '2'
@@ -67,6 +71,7 @@ Title($color)
 body
   max-width: 1080px
   margin: 0 auto
+  color: $text-content
 ul
   display: flex
   list-style: none
@@ -74,6 +79,7 @@ ul
 
 main
   position: relative
+  overflow: hidden
 
 .navbar
   display: grid
@@ -104,7 +110,7 @@ main
 .right-border
   height: auto
   width: 3px
-  margin-right: 1em
+  margin-right: 0.5em
   background-color: $primaryColor
 
 .main-section
@@ -115,20 +121,45 @@ main
   height: 100vh
 
 .hero
+  SubTitle(1)
   margin: 30vh 0
+  p
+    margin-top: 0
+    margin-bottom: 0.5em
+  p:last-child
+    TextContent()
+    margin-bottom: 0
   &__container
     display: flex
 
 .section-title
+  Title(1)
+  &--dark
+    color: $darkColor
+.section-subtitle
   SubTitle(1)
+  font-weight: 900
+  span:first-child
+    display: inline-block
+    float: left
+    width: 48%
+    margin-top: 0.5em
+    border-bottom: 2px solid $primaryColor
+  span:last-child
+    display: block
+    text-align: right
+    TextContent()
+    font-size: 18px
 
+  &--dark
+    color: $darkColor
 .portfolio
   PageMargin()
   SectionMargin()
   background-color: $lightColor
-  position: relative;
-  overflow: hidden;
-  height: 100vw
+  position: relative
+  overflow: hidden
+  height: 500px
 
 //carousel para imagenes de 5:3
 $carouselHeight = 100vw * 0.7
@@ -192,6 +223,49 @@ $carouselContainerHeight = $carouselHeight * 0.6 //modificar el alto de la image
   div
     width: $carouselContainerHeight * 1.2
 .skills
-    PageMargin()
-    SectionMargin()
-    background-color: $darkColor
+  PageMargin()
+  SectionMargin()
+  height: "calc(100vh - %s)" %($navbarHeight) //anota esto porque no lo sabia
+  background-color: $darkColor
+  &__icons
+    margin-top: 150px
+    text-align: center
+    img
+      width: 42px
+      height: 42px
+    span
+      display: inline-block;
+      margin: 20px
+
+.about-me
+  display: grid
+  grid-template-columns: 1fr 2fr 50px
+  grid-template-rows: 360px
+  grid-gap: 0.5em
+  margin-top: $navbarHeight
+  height: 100vh
+  background-color: $darkColor
+  position: relative
+  &__photo
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
+  &__description
+    SubTitle(1)
+    margin: auto 0
+    text-align: right
+  &__text
+    margin: 0 1em
+    grid-column-start: 1
+    grid-column-end: 4
+  &__title
+    position: absolute
+    right: 0
+    top: 0px
+    height: 50px
+    Title(1)
+    margin: 0
+    padding: 0 70px;
+    transform-origin: 100% 100%
+    transform: rotateZ(-90deg)
