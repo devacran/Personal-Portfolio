@@ -79,7 +79,7 @@ ul
 
 main
   position: relative
-  overflow: hidden
+
 
 .navbar
   display: grid
@@ -93,6 +93,21 @@ main
   background-color: $darkColor
   color: $primaryColor
   z-index: 3
+  &--side
+    display: block
+    background-color: $darkColor
+    position: fixed
+    left: calc(100vw - 100px)
+    top: 50px
+    z-index: -1
+    width: 70px
+    height: 100vh
+    ul
+      display: block
+      text-align: end;
+      margin: 0;
+      li
+        margin: 1em 0
   @media mqTablet
     grid-template-columns: 1fr 2fr 1fr
   ul:first-child
@@ -142,7 +157,7 @@ main
   span:first-child
     display: inline-block
     float: left
-    width: 48%
+    width: 45%
     margin-top: 0.5em
     border-bottom: 2px solid $primaryColor
   span:last-child
@@ -253,10 +268,12 @@ $carouselContainerHeight = $carouselHeight * 0.6 //modificar el alto de la image
       object-fit: cover
   &__description
     SubTitle(1)
+    font-weight: 100
     margin: auto 0
     text-align: right
   &__text
-    margin: 0 1em
+    TextContent()
+    margin: 1em 1em
     grid-column-start: 1
     grid-column-end: 4
   &__title

@@ -6,7 +6,7 @@
 doctype html
 html
   head
-    link(href="https://fonts.googleapis.com/css2?family=Prompt:wght@700&family=Roboto:wght@400;900&display=swap" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css2?family=Prompt:wght@700&family=Roboto:wght@100;400;700&display=swap" rel="stylesheet")
     link(rel='stylesheet' href='src/css/styles.css')
     meta(meta name="viewport" content="width=device-width, initial-scale=1")
   body
@@ -18,9 +18,18 @@ html
         ul
           li proyecto
           li contacto
-          li about me
+          li
+            a(href='about.html') about me
           li idioma
         ul
-          li menu
+          li 
+            a#menu(toggle='false') menu
+      nav.navbar.navbar--side
+        ul
+          li proyecto
+          li contacto
+          li
+            a(href='about.html') about me
+          li idioma
     block content  
           

@@ -37,7 +37,6 @@ ul {
 }
 main {
   position: relative;
-  overflow: hidden;
 }
 .navbar {
   display: grid;
@@ -51,6 +50,24 @@ main {
   background-color: #171717;
   color: #e5e4c0;
   z-index: 3;
+}
+.navbar--side {
+  display: block;
+  background-color: #171717;
+  position: fixed;
+  left: calc(100vw - 100px);
+  top: 50px;
+  z-index: -1;
+  width: 70px;
+  height: 100vh;
+}
+.navbar--side ul {
+  display: block;
+  text-align: end;
+  margin: 0;
+}
+.navbar--side ul li {
+  margin: 1em 0;
 }
 @media only screen and (min-width: 720px) {
   .navbar {
@@ -128,7 +145,7 @@ main {
 .section-subtitle span:first-child {
   display: inline-block;
   float: left;
-  width: 48%;
+  width: 45%;
   margin-top: 0.5em;
   border-bottom: 2px solid #e5e4c0;
 }
@@ -266,11 +283,15 @@ main {
   font-size: 28px;
   font-family: 'Roboto';
   color: #e5e4c0;
+  font-weight: 100;
   margin: auto 0;
   text-align: right;
 }
 .about-me__text {
-  margin: 0 1em;
+  color: #848484;
+  font-size: 18px;
+  font-weight: 400;
+  margin: 1em 1em;
   grid-column-start: 1;
   grid-column-end: 4;
 }
