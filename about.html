@@ -6,30 +6,41 @@
     <meta meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
+    <nav>
+      <div class="navbar">
+        <ul>
+          <li><a href="/">Inicio</a></li>
+          <li>Blog</li>
+        </ul>
+        <ul>
+          <li><a href="direccion">Proyectos</a></li>
+          <li><a href="direccion">Contacto</a></li>
+          <li><a href="direccion">Idioma</a></li>
+          <li><a href="/about.html">Acerca de mi</a></li>
+        </ul>
+        <ul class="navbar__menu-btn">
+          <li> <a>Idioma </a><a id="menu" toggle="false">Menu</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav class="navbar navbar--side">
+      <ul>
+        <li><a href="direccion">Proyectos</a></li>
+        <li><a href="direccion">Contacto</a></li>
+        <li><a href="direccion">Idioma</a></li>
+        <li><a href="/about.html">Acerca de mi</a></li>
+      </ul>
+    </nav>
     <main>
-      <nav class="navbar">
-        <ul>
-          <li>logo</li>
-          <li>devacran</li>
-        </ul>
-        <ul>
-          <li>proyecto</li>
-          <li>contacto</li>
-          <li>about me</li>
-          <li>idioma</li>
-        </ul>
-        <ul>
-          <li>menu</li>
-        </ul>
-      </nav>
-    </main>
-    <section class="about-me"> 
-      <div class="about-me__photo"><img src="src/images/porfile.jpeg"></div>
-      <div class="about-me__description">I’m Miguel de la Rosa, often known as ‘devacran’, Fullstack Developer</div>
-      <div class="about-me__text">I’ve working in a tech company abou years, developing in Javascrip and React. Also i’been shown many courses around the wolrd.
+      <section class="about-me"> 
+        <div class="about-me__photo"><img src="src/images/porfile.jpeg"></div>
+        <div class="about-me__description">I’m Miguel de la Rosa, often known as ‘devacran’, Fullstack Developer</div>
+        <div class="about-me__text">I’ve working in a tech company abou years, developing in Javascrip and React. Also i’been shown many courses around the wolrd.
 I’m a very apassionated person and always trhat my cleants vy preslue.
 Get in touch with me at migueelderg@gmail.com.</div>
-    </section>
-    <div class="about-me__title">about me</div>
+      </section>
+      <div class="about-me__title" id="about">about me</div>
+    </main>
+    <script src="src/js/script.js"> </script>
   </body>
 </html>

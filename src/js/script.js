@@ -5,7 +5,7 @@ const $stripBig = document.getElementById('carouselBig')
 const $menu = document.getElementById('menu')
 const $navbarSide = document.querySelector('.navbar--side')
 const $sections = document.querySelectorAll('section')
-
+const $aboutTitle = document.getElementById('about')
 let moveSmall = 0
 let moveBig = 0
 
@@ -33,20 +33,32 @@ function toggleMenu(){
     Array.prototype.forEach.call($sections, section => {
       section.style.transition = '0.5s'
       section.style.transform = `translateX(-${menuWidth}px)`
-      $menu.setAttribute('toggle','true')
     })
+    if($aboutTitle){
+      const aboutTitleHeight = $aboutTitle.offsetHeight + 25
+      $aboutTitle.style.transition = '0.5s'
+      $aboutTitle.style.transform = `rotateZ(-90deg) translate(0px, -${aboutTitleHeight}px)`
+    }
+    $menu.setAttribute('toggle','true')
+    $navbarSide.style.zIndex = 0
   }else{
     Array.prototype.forEach.call($sections, section => {
       section.style.transform = 'translateX(0)'
     })
+    if($aboutTitle){
+      $aboutTitle.style.transform = `rotateZ(-90deg) translate(0px,0px)`
+      $navbarSide.style.zIndex = -1
+    }
     $menu.setAttribute('toggle','false')
   }
 }
-$forwardBtn.addEventListener('click', () => {
-  move('forwards')
-})
-$backwardBtn.addEventListener('click', () => {
-  move('backwards')
-})
+if($forwardBtn){
+  $forwardBtn.addEventListener('click', () => {
+    move('forwards')
+  })
+  $backwardBtn.addEventListener('click', () => {
+    move('backwards')
+  })
+}
 
 $menu.addEventListener('click', toggleMenu)

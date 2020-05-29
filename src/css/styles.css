@@ -43,7 +43,10 @@ a {
 nav {
   display: flex;
   justify-content: center;
+  width: 100%;
   background-color: #171717;
+  position: fixed;
+  z-index: 1;
 }
 main {
   max-width: 1080px;
@@ -52,7 +55,6 @@ main {
 .navbar {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  position: fixed;
   height: 50px;
   padding: 0 15px;
   width: 100%;
@@ -60,7 +62,7 @@ main {
   background-color: #171717;
   color: #e5e4c0;
   box-sizing: border-box;
-  z-index: 3;
+  z-index: 4;
 }
 .navbar--side {
   display: block;
@@ -204,6 +206,11 @@ main {
   right: 0;
   position: absolute;
 }
+.carousel__btn {
+  position: absolute;
+  z-index: 1;
+  right: 50%;
+}
 .carousel__overlay {
   position: absolute;
   left: 0;
@@ -300,7 +307,6 @@ main {
   grid-template-columns: 1fr 2fr 50px;
   grid-template-rows: 360px;
   grid-gap: 0.5em;
-  margin-top: 50px;
   height: 100vh;
   background-color: #171717;
   position: relative;

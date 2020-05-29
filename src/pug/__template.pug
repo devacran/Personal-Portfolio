@@ -14,20 +14,17 @@ html
     nav
       div.navbar
         ul
-          li logo
-          li devacran
+          li
+            a(href="/") Inicio
+          li Blog
         +menu
-          //- li proyecto
-          //- li contacto
-          //- li
-          //-   a(href='about.html') about me
-          //- li idioma
         ul.navbar__menu-btn
           li 
-            a() idioma 
-            a#menu(toggle='false') menu
-      nav.navbar.navbar--side
-        +menu
+            a() Idioma 
+            a#menu(toggle='false') Menu
+    nav.navbar.navbar--side
+      +menu
     main
       block mainContent  
-    block sections    
+    block sections  
+    script(src='src/js/script.js')  

@@ -35,13 +35,16 @@
       href: 'direccion',
     },
     {
-      name: "Otra cosa",
-      href: 'direccion',
+      name: "Acerca de mi",
+      href: '/about.html',
     },
   ]
   
 mixin carousel
   .carousel
+    div.carousel__btn
+      button#forward adelante
+      button#backward atras
     .carousel__container
       .carousel__overlay
       .carousel__strip.carousel__strip-small#carouselSmall

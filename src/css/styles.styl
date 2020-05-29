@@ -84,7 +84,10 @@ a
 nav
   display: flex;
   justify-content: center;
+  width: 100%;
   background-color: $darkColor
+  position: fixed;
+  z-index: 1;
 
 main
   max-width: 1080px
@@ -93,7 +96,6 @@ main
 .navbar
   display: grid
   grid-template-columns: 1fr 1fr
-  position: fixed
   height: $navbarHeight
   PageMargin()
   width: 100%;
@@ -101,7 +103,7 @@ main
   background-color: $darkColor
   color: $primaryColor
   box-sizing: border-box
-  z-index: 3
+  z-index: 4
   &--side
     @media mqTablet
       display: none
@@ -204,6 +206,10 @@ $carouselContainerHeight = $carouselHeight * 0.6 //modificar el alto de la image
   left: 0
   right: 0
   position: absolute
+  &__btn
+    position: absolute;
+    z-index: 1
+    right: 50%
   &__overlay
     position: absolute;
     left: 0
@@ -279,7 +285,7 @@ $carouselContainerHeight = $carouselHeight * 0.6 //modificar el alto de la image
   grid-template-columns: 1fr 2fr 50px
   grid-template-rows: 360px
   grid-gap: 0.5em
-  margin-top: $navbarHeight
+  // margin-top: $navbarHeight
   height: 100vh
   background-color: $darkColor
   position: relative

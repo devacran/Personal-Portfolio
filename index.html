@@ -9,27 +9,27 @@
     <nav>
       <div class="navbar">
         <ul>
-          <li>logo</li>
-          <li>devacran</li>
+          <li><a href="/">Inicio</a></li>
+          <li>Blog</li>
         </ul>
         <ul>
           <li><a href="direccion">Proyectos</a></li>
           <li><a href="direccion">Contacto</a></li>
           <li><a href="direccion">Idioma</a></li>
-          <li><a href="direccion">Otra cosa</a></li>
+          <li><a href="/about.html">Acerca de mi</a></li>
         </ul>
         <ul class="navbar__menu-btn">
-          <li> <a>idioma </a><a id="menu" toggle="false">menu</a></li>
+          <li> <a>Idioma </a><a id="menu" toggle="false">Menu</a></li>
         </ul>
       </div>
-      <nav class="navbar navbar--side">
-        <ul>
-          <li><a href="direccion">Proyectos</a></li>
-          <li><a href="direccion">Contacto</a></li>
-          <li><a href="direccion">Idioma</a></li>
-          <li><a href="direccion">Otra cosa</a></li>
-        </ul>
-      </nav>
+    </nav>
+    <nav class="navbar navbar--side">
+      <ul>
+        <li><a href="direccion">Proyectos</a></li>
+        <li><a href="direccion">Contacto</a></li>
+        <li><a href="direccion">Idioma</a></li>
+        <li><a href="/about.html">Acerca de mi</a></li>
+      </ul>
     </nav>
     <main>
       <section class="main-section">
@@ -43,35 +43,36 @@
       </section>
     </main>
     <section class="portfolio">
-      <div class="section-title section-title--dark">Featured Work
-        <div class="carousel">
-          <div class="carousel__container">
-            <div class="carousel__overlay"></div>
-            <div class="carousel__strip carousel__strip-small" id="carouselSmall">
-              <div><a href="direccion"><img src="src/images/blog1.jpg" alt="Hola"/></a></div>
-              <div><a href="direccion"><img src="src/images/blog2.jpg" alt="Hola"/></a></div>
-              <div><a href="direccion"><img src="src/images/blog1.jpg" alt="Hola"/></a></div>
-              <div><a href="direccion"><img src="src/images/blog2.jpg" alt="Hola"/></a></div>
-            </div>
+      <div class="section-title section-title--dark">Featured Work</div>
+      <div class="carousel">
+        <div class="carousel__btn">
+          <button id="forward">adelante</button>
+          <button id="backward">atras</button>
+        </div>
+        <div class="carousel__container">
+          <div class="carousel__overlay"></div>
+          <div class="carousel__strip carousel__strip-small" id="carouselSmall">
+            <div><a href="direccion"><img src="src/images/blog1.jpg" alt="Hola"/></a></div>
+            <div><a href="direccion"><img src="src/images/blog2.jpg" alt="Hola"/></a></div>
+            <div><a href="direccion"><img src="src/images/blog1.jpg" alt="Hola"/></a></div>
+            <div><a href="direccion"><img src="src/images/blog2.jpg" alt="Hola"/></a></div>
           </div>
-          <div class="carousel__central">
-            <div class="carousel__strip" id="carouselBig">
-              <div><a href="direccion"><img src="src/images/blog1.jpg" alt="Hola"/></a></div>
-              <div><a href="direccion"><img src="src/images/blog2.jpg" alt="Hola"/></a></div>
-              <div><a href="direccion"><img src="src/images/blog1.jpg" alt="Hola"/></a></div>
-              <div><a href="direccion"><img src="src/images/blog2.jpg" alt="Hola"/></a></div>
-            </div>
+        </div>
+        <div class="carousel__central">
+          <div class="carousel__strip" id="carouselBig">
+            <div><a href="direccion"><img src="src/images/blog1.jpg" alt="Hola"/></a></div>
+            <div><a href="direccion"><img src="src/images/blog2.jpg" alt="Hola"/></a></div>
+            <div><a href="direccion"><img src="src/images/blog1.jpg" alt="Hola"/></a></div>
+            <div><a href="direccion"><img src="src/images/blog2.jpg" alt="Hola"/></a></div>
           </div>
         </div>
       </div>
-      <button id="forward">adelante</button>
-      <button id="backward">atras</button>
     </section>
     <section class="skills">
       <div class="section-title">Relevant Skills</div>
       <div class="section-subtitle"><span> </span><span>WEB DEVELOP</span><span>I work with the best tecnologies</span></div>
       <div class="skills__icons"><span><img src="src/images/angular.png"></span><span><img src="src/images/angular.png"></span><span><img src="src/images/angular.png"></span><span><img src="src/images/angular.png"></span><span><img src="src/images/angular.png"></span><span><img src="src/images/angular.png"></span><span><img src="src/images/angular.png"></span><span><img src="src/images/angular.png"></span></div>
     </section>
-    <script src="src/js/script.js"></script>
+    <script src="src/js/script.js"> </script>
   </body>
 </html>
