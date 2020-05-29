@@ -69,31 +69,42 @@ Title($color)
     color: $darkColor
 
 body
-  max-width: 1080px
   margin: 0 auto
   color: $text-content
+  background-color: $darkColor
+
 ul
   display: flex
   list-style: none
   padding: 0
+a
+  color: $primaryColor
+  text-decoration: none
+  cursor: pointer
+nav
+  display: flex;
+  justify-content: center;
+  background-color: $darkColor
 
 main
-  position: relative
-
+  max-width: 1080px
+  margin: 0 auto
 
 .navbar
   display: grid
   grid-template-columns: 1fr 1fr
   position: fixed
-  top: 0
-  left: 0
-  right: 0
   height: $navbarHeight
   PageMargin()
+  width: 100%;
+  max-width: 1080px;
   background-color: $darkColor
   color: $primaryColor
+  box-sizing: border-box
   z-index: 3
   &--side
+    @media mqTablet
+      display: none
     display: block
     background-color: $darkColor
     position: fixed
@@ -102,12 +113,21 @@ main
     z-index: -1
     width: 70px
     height: 100vh
+    box-sizing: content-box
     ul
       display: block
       text-align: end;
       margin: 0;
       li
         margin: 1em 0
+  &__menu-btn
+    a:first-child
+      display: none
+      @media mqTablet
+        display: block
+    a:last-child
+      @media mqTablet
+        display: none
   @media mqTablet
     grid-template-columns: 1fr 2fr 1fr
   ul:first-child
@@ -241,6 +261,8 @@ $carouselContainerHeight = $carouselHeight * 0.6 //modificar el alto de la image
   PageMargin()
   SectionMargin()
   height: "calc(100vh - %s)" %($navbarHeight) //anota esto porque no lo sabia
+  max-width: 1080px
+  margin: 0 auto
   background-color: $darkColor
   &__icons
     margin-top: 150px

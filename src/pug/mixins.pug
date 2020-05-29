@@ -21,6 +21,24 @@
       img: 'src/images/blog2.jpg'
     },
   ]
+  var menuItems = [
+    {
+      name: "Proyectos",
+      href: 'direccion',
+    },
+    {
+      name: "Contacto",
+      href: 'direccion',
+    },
+    {
+      name: "Idioma",
+      href: 'direccion',
+    },
+    {
+      name: "Otra cosa",
+      href: 'direccion',
+    },
+  ]
   
 mixin carousel
   .carousel
@@ -37,3 +55,9 @@ mixin carousel
           div
             a(href=proyect.href)
               img(src=proyect.img alt=proyect.title)
+
+mixin menu 
+  ul
+    each item in menuItems
+      li
+        a(href=item.href)=item.name

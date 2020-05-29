@@ -26,29 +26,40 @@ SubTitle($color) {
   opacity: 0;
 }
 body {
-  max-width: 1080px;
   margin: 0 auto;
   color: #848484;
+  background-color: #171717;
 }
 ul {
   display: flex;
   list-style: none;
   padding: 0;
 }
+a {
+  color: #e5e4c0;
+  text-decoration: none;
+  cursor: pointer;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: #171717;
+}
 main {
-  position: relative;
+  max-width: 1080px;
+  margin: 0 auto;
 }
 .navbar {
   display: grid;
   grid-template-columns: 1fr 1fr;
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
   height: 50px;
   padding: 0 15px;
+  width: 100%;
+  max-width: 1080px;
   background-color: #171717;
   color: #e5e4c0;
+  box-sizing: border-box;
   z-index: 3;
 }
 .navbar--side {
@@ -60,6 +71,12 @@ main {
   z-index: -1;
   width: 70px;
   height: 100vh;
+  box-sizing: content-box;
+}
+@media only screen and (min-width: 720px) {
+  .navbar--side {
+    display: none;
+  }
 }
 .navbar--side ul {
   display: block;
@@ -68,6 +85,19 @@ main {
 }
 .navbar--side ul li {
   margin: 1em 0;
+}
+.navbar__menu-btn a:first-child {
+  display: none;
+}
+@media only screen and (min-width: 720px) {
+  .navbar__menu-btn a:first-child {
+    display: block;
+  }
+}
+@media only screen and (min-width: 720px) {
+  .navbar__menu-btn a:last-child {
+    display: none;
+  }
 }
 @media only screen and (min-width: 720px) {
   .navbar {
@@ -249,6 +279,8 @@ main {
   padding: 0 15px;
   padding-top: 50px;
   height: calc(100vh - 50px);
+  max-width: 1080px;
+  margin: 0 auto;
   background-color: #171717;
 }
 .skills__icons {
