@@ -1,0 +1,39 @@
+-
+  var proyects = [
+    {
+      title: "Hola",
+      href: 'direccion',
+      img: 'src/images/blog1.jpg'
+    },
+    {
+      title: "Hola",
+      href: 'direccion',
+      img: 'src/images/blog2.jpg'
+    },
+    {
+      title: "Hola",
+      href: 'direccion',
+      img: 'src/images/blog1.jpg'
+    },
+    {
+      title: "Hola",
+      href: 'direccion',
+      img: 'src/images/blog2.jpg'
+    },
+  ]
+  
+mixin carousel
+  .carousel
+    .carousel__container
+      .carousel__overlay
+      .carousel__strip.carousel__strip-small#carouselSmall
+        each proyect in proyects
+          div
+            a(href=proyect.href)
+              img(src=proyect.img alt=proyect.title)
+    .carousel__central
+      .carousel__strip#carouselBig
+        each proyect in proyects
+          div
+            a(href=proyect.href)
+              img(src=proyect.img alt=proyect.title)
