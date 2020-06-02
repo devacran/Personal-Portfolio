@@ -28,7 +28,7 @@ function move(direction) {
 }
 
 function toggleMenu(){
-  const menuWidth = parseInt($navbarSide.childNodes[1].clientWidth) + 20
+  const menuWidth = parseInt($navbarSide.offsetWidth)
   if($menu.getAttribute('toggle') === 'false'){
     Array.prototype.forEach.call($sections, section => {
       section.style.transition = '0.5s'

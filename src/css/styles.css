@@ -29,6 +29,7 @@ body {
   margin: 0 auto;
   color: #848484;
   background-color: #171717;
+  font-family: 'Roboto';
 }
 ul {
   display: flex;
@@ -65,7 +66,6 @@ main {
   z-index: 4;
 }
 .navbar--side {
-  display: block;
   background-color: #171717;
   position: fixed;
   left: calc(100vw - 100px);
@@ -198,10 +198,29 @@ main {
   background-color: #efefef;
   position: relative;
   overflow: hidden;
-  height: 500px;
+  height: 600px;
+}
+.portfolio__proyect-title {
+  margin-bottom: 1em;
+  font-size: 28px;
+  font-family: 'Roboto';
+  color: #171717;
+  text-align: center;
+}
+.portfolio__project-description {
+  text-align: center;
+  margin-top: 350px;
+}
+.portfolio__button {
+  padding: 0 5px;
+  border: none;
+  background: none;
+}
+.portfolio__button:focus {
+  outline: none;
 }
 .carousel {
-  top: 150px;
+  top: 200px;
   left: 0;
   right: 0;
   position: absolute;
@@ -347,6 +366,66 @@ main {
   padding: 0 70px;
   transform-origin: 100% 100%;
   transform: rotateZ(-90deg);
+}
+.footer {
+  background-color: #efefef;
+  height: calc(100vh - 50px);
+}
+@media only screen and (min-width: 720px) {
+  .footer {
+    height: auto;
+    padding-bottom: 1em;
+    text-align: initial;
+  }
+}
+.footer__grid {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  padding: 0 15px;
+  padding-top: 50px;
+  margin: 0 auto;
+  text-align: center;
+}
+@media only screen and (min-width: 720px) {
+  .footer__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-columns: 2fr 1fr;
+    height: 100%;
+  }
+}
+@media only screen and (min-width: 720px) {
+  .footer__item-1 {
+    text-align: left;
+  }
+}
+.footer__item-3 {
+  margin-bottom: 1em;
+  font-size: 28px;
+  font-family: 'Roboto';
+  color: #171717;
+  color: #96946e;
+}
+@media only screen and (min-width: 720px) {
+  .footer__item-3 {
+    text-align: left;
+  }
+}
+.footer__item-2 {
+  color: #848484;
+  font-size: 18px;
+  font-weight: 400;
+  margin: 10vh 0 30vh 0;
+}
+.footer__item-2 span:last-child {
+  display: block;
+  margin: 1em;
+}
+@media only screen and (min-width: 720px) {
+  .footer__item-2 {
+    margin: 0;
+  }
 }
 @keyframes expandHeight {
   to {

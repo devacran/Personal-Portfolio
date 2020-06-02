@@ -11,10 +11,17 @@ block mainContent
 block sections          
   section.portfolio
     .section-title.section-title--dark Featured Work
+    .portfolio__proyect-title
+      span
+        button()#backward.portfolio__button
+          img(src='./src/images/backwards.png')
+      span Platzi Video
+      span
+        button()#forward.portfolio__button
+          img(src='./src/images/forwards.png')
     +carousel 
-    //- button#forward adelante
-    //- button#backward atras
-    
+    .portfolio__project-description
+      span Proyecto hecho con stylus, HTML y CSS
   section.skills
     .section-title Relevant Skills
     .section-subtitle
