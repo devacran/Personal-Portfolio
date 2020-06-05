@@ -19,10 +19,14 @@ module.exports = {
                     loader: 'babel-loader',
                 },
             },
+            // {
+            //     test: /\.css?$/,
+            //     exclude: /node_modules/,
+            //     use: ['style-loader', 'css-loader'],
+            // },
             {
-                test: /\.css?$/,
-                exclude: /node_modules/,
-                use: ['style-loader', 'css-loader'],
+                test: /\.styl$/,
+                loader: 'style-loader!css-loader!stylus-loader',
             },
             {
                 test: [/\.pug/],
@@ -35,7 +39,7 @@ module.exports = {
             //     use: 'html-loader',
             // },
             {
-                test: /\.(png|jpe?g|gif)$/i,
+                test: /\.(png|jpe?g|gif|svg)$/i,
                 exclude: [/node_modules/, /public/, /dist/],
                 use: [
                     {
