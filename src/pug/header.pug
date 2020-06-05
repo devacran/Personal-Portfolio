@@ -1,0 +1,14 @@
+include mixins.pug
+nav
+  div.navbar
+    ul
+      li
+        a(href="/") Inicio
+      li Blog
+    +menu
+    ul.navbar__menu-btn
+      li 
+        a() Idioma 
+        a#menu(toggle='false') Menu
+nav.navbar.navbar--side
+  +menu

@@ -1,0 +1,40 @@
+extend ./src/pug/__template.pug
+block mainContent
+  section.main-section
+    div.hero
+      .hero__container
+        div.right-border.expandHeight
+        span 
+          p HELLO! <br><b>I'M MIGUEL DE LA ROSA</b> <br> WEB DEVELOPER
+          span
+            p Apasionated about technology and music
+block sections          
+  section.portfolio
+    .section-title.section-title--dark Featured Work
+    .portfolio__proyect-title
+      span
+        button()#backward.portfolio__button
+          img(src='./src/images/backwards.png')
+      span Platzi Video
+      span
+        button()#forward.portfolio__button
+          img(src='./src/images/forwards.png')
+    +carousel 
+    .portfolio__project-description
+      span Proyecto hecho con stylus, HTML y CSS
+  section.skills
+    .section-title Relevant Skills
+    .section-subtitle
+      span 
+      span WEB DEVELOP
+      span I work with the best tecnologies
+    .skills__icons
+      span: img(src='src/images/angular.png')
+      span: img(src='src/images/angular.png')
+      span: img(src='src/images/angular.png')
+      span: img(src='src/images/angular.png')
+      span: img(src='src/images/angular.png')
+      span: img(src='src/images/angular.png')
+      span: img(src='src/images/angular.png')
+      span: img(src='src/images/angular.png')
+    

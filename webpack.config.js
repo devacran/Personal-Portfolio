@@ -24,6 +24,25 @@ module.exports = {
                 exclude: /node_modules/,
                 use: ['style-loader', 'css-loader'],
             },
+            {
+                test: [/\.pug/],
+                exclude: [/node_modules/, /public/, /dist/],
+                loaders: ['html-loader', 'pug-html-loader'],
+            },
+            // {
+            //     test: /\.html?$/i,
+            //     exclude: [/node_modules/, /public/, /dist/],
+            //     use: 'html-loader',
+            // },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                exclude: [/node_modules/, /public/, /dist/],
+                use: [
+                    {
+                        loader: 'file-loader',
+                    },
+                ],
+            },
         ],
     },
     plugins: [
