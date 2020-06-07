@@ -1,9 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap')
 
-$primaryFont = font-family: 'Roboto', sans-serif
-$secondaryFont
+//<----------------- Variables---------------->
+$primaryFont = 'Roboto'
+$secondaryFont ='Prompt'
+
+$primaryColor = #E5E4C0
+$secondaryColor = #96946E
+$lightColor = #EFEFEF
+$darkColor = #171717
+
+$text-content = #848484
+$navbarHeight = 60px
+
+mobileWidth = 320px
+mobilePotraitWidth = 636px
+tabletWidth = 720px
+tabletPotraitWidth = 840px
+deskWidth = 1000px
+
+mqMobile = "only screen and (min-width: " + mobileWidth + ")"
+mqTablet     = "only screen and (min-width: " + tabletWidth + ")"
+mqDesk     = "only screen and (min-width: " + deskWidth + ")"
+mqTabletPotrait = "only screen and (min-width: " + tabletPotraitWidth + ")"
+mqMobilePotrait = "only screen and (max-width: " + mobilePotraitWidth + ")"
 
 
+//<----------------- Mixins---------------->
+TextContent()
+  color: $text-content
+  font-size: 18px
+  font-weight: 400
 
 SubTitle($color)
   margin-bottom: 1em
@@ -20,6 +46,18 @@ PageMargin()
 SectionMargin()
   padding-top: $navbarHeight
 
+
+Title($color)
+  margin-bottom: 1em
+  text-align: center
+  font-size: 36px
+  font-family: $secondaryFont
+  if $color == '1'
+    color: $primaryColor
+  if $color == '2'
+    color: $darkColor
+
+//<----------------- Utils---------------->
 .expandHeight
     animation: expandHeight 1s forwards
     clip-path: inset(100% 0px)
@@ -32,17 +70,60 @@ SectionMargin()
   }
 }
 
-mobileWidth = 320px
-mobilePotraitWidth = 636px
-tabletWidth = 720px
-tabletPotraitWidth = 840px
-deskWidth = 1000px
-maxWidth = 1439px
-
-mqMobile = "only screen and (min-width: " + mobileWidth + ")"
-mqTablet     = "only screen and (min-width: " + tabletWidth + ")"
-mqMax     = "only screen and (min-width: " + maxWidth + ")"
+.right-border
+  height: auto
+  width: 3px
+  margin-right: 0.5em
+  background-color: $primaryColor
 
 
-mqTabletPotrait = "only screen and (max-width: " + tabletPotraitWidth + ")"
-mqMobilePotrait = "only screen and (max-width: " + mobilePotraitWidth + ")"
+//<----------------- Globals---------------->
+
+body
+  margin: 0 auto
+  color: $text-content
+  background-color: $darkColor
+  font-family: $primaryFont
+
+ul
+  display: flex
+  list-style: none
+  padding: 0
+a
+  color: $primaryColor
+  text-decoration: none
+  cursor: pointer
+nav
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: $darkColor
+  position: fixed;
+  z-index: 1;
+
+main
+  max-width: 1080px
+  margin: 0 auto
+
+.section-title
+  Title(1)
+  &--dark
+    color: $darkColor
+.section-subtitle
+  SubTitle(1)
+  font-weight: 900
+  // span:first-child
+  //   display: inline-block
+  //   float: left
+  //   width: 45%
+  //   margin-top: 0.5em
+  //   border-bottom: 2px solid $primaryColor
+  div:first-child
+    text-align: right;
+  span:last-child
+    display: block
+    text-align: right
+    TextContent()
+    font-size: 18px
+  &--dark
+    color: $darkColor

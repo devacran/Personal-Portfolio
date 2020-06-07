@@ -1,0 +1,70 @@
+//carousel para imagenes de 5:3
+$carouselHeight = 100vw * 0.7
+$carouselContainerHeight = $carouselHeight * 0.6 //modificar el alto de la imagen
+.carousel
+  top: 200px
+  left: 0
+  right: 0
+  position: absolute
+  &__overlay
+    position: absolute;
+    width: 2000px
+    left: -1000px
+    right: 0
+    bottom: 0
+    top: 0
+    background-color: rgba(21, 21, 21, 0.64)
+    z-index: 2
+  &__central
+    margin: auto;
+    height: $carouselHeight
+    clip-path: inset(0 11vw) //modificar el ancho de la imagen
+    @media mqMobile
+      max-height: 400px
+      max-width: 572px
+    @media mqDesk
+      clip-path: inset(0 57px)
+
+  &__strip
+    display: flex
+    height: 100%
+    width: fit-content
+    position: relative;
+    transition: 1s
+    div
+      height: 100%
+      width: $carouselHeight * 1.15
+      max-width: 400px * 1.15
+      margin: 0 auto
+      img
+        width: 100%
+        height: -webkit-fill-available
+        object-fit: fill
+  &__container
+    @media mqTablet
+      max-width: 572px;
+    width: fit-content
+    height: $carouselContainerHeight
+    max-height: 400px
+    position: absolute;
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    margin: auto
+    z-index: 0
+
+.carousel__strip-big
+  @media mqDesk
+    left: -404px
+  left: -71%; //para centrar la tira de imagenes
+
+.carousel__strip-small
+  @media mqTablet
+    left: -100px
+  @media mqDesk
+    left: -404px
+  left: 0 //Para centrar el strip pequeño
+  left: -35vw
+  div
+    width: $carouselContainerHeight * 1.2
