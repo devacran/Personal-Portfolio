@@ -95,6 +95,8 @@ main
   margin: 0 auto
 
 .navbar
+  @media mqTablet
+    grid-template-columns: 1fr 2fr 1fr
   display: grid
   grid-template-columns: 1fr 1fr
   height: $navbarHeight
@@ -105,10 +107,9 @@ main
   color: $primaryColor
   box-sizing: border-box
   z-index: 4
-  &__logo
-    img
-      width: 40px
-
+  ul
+    align-items: center
+    margin: 0
   &--side
     @media mqTablet
       display: none
@@ -126,27 +127,30 @@ main
       margin: 0;
       li
         margin: 1em 0
-  &__menu-btn
+  &__left
+    justify-content: flex-start
+    li:last-child
+      margin-left: 1em
+    img
+      width: 40px
+  &__right
+    justify-content: flex-end
     a:first-child
       display: none
       @media mqTablet
         display: block
+        img
+          width: 30px
     a:last-child
       @media mqTablet
         display: none
-  @media mqTablet
-    grid-template-columns: 1fr 2fr 1fr
-  ul:first-child
-    li:last-child
-      margin-left: 1em
-    justify-content: flex-start
-  ul:nth-child(2)
+  &__center
     display: none
     justify-content: space-evenly
     @media mqTablet
       display: flex
-  ul:last-child
-    justify-content: flex-end
+
+
 
 .right-border
   height: auto
@@ -200,17 +204,22 @@ main
   background-color: $lightColor
   position: relative
   overflow: hidden
-  height: 600px
+  height: "calc(100vh - %s)" %($navbarHeight)
+  min-height: 600px
   &__proyect-title
     SubTitle(2)
     text-align: center
   &__project-description
+    position: absolute;
     text-align: center;
-    margin-top: 350px
+    bottom: -40px
+    right: 0
+    left: 0
   &__button
     padding: 0 5px;
     border: none
     background: none
+    cursor: pointer;
     &:focus
       outline: none
 //carousel para imagenes de 5:3
@@ -221,13 +230,10 @@ $carouselContainerHeight = $carouselHeight * 0.6 //modificar el alto de la image
   left: 0
   right: 0
   position: absolute
-  &__btn
-    position: absolute;
-    z-index: 1
-    right: 50%
   &__overlay
     position: absolute;
-    left: 0
+    width: 2000px
+    left: -1000px
     right: 0
     bottom: 0
     top: 0
@@ -236,8 +242,7 @@ $carouselContainerHeight = $carouselHeight * 0.6 //modificar el alto de la image
   &__central
     margin: auto;
     height: $carouselHeight
-    background-color: #3F51B5;
-    clip-path: inset(0 10vw) //modificar el ancho de la imagen
+    clip-path: inset(0 11vw) //modificar el ancho de la imagen
     @media mqMobile
       max-height: 400px
       max-width: 572px
@@ -249,7 +254,6 @@ $carouselContainerHeight = $carouselHeight * 0.6 //modificar el alto de la image
     height: 100%
     width: fit-content
     position: relative;
-    left: -71%; //para centrar la tira de imagenes
     transition: 1s
     div
       height: 100%
@@ -261,6 +265,9 @@ $carouselContainerHeight = $carouselHeight * 0.6 //modificar el alto de la image
         height: -webkit-fill-available
         object-fit: fill
   &__container
+    @media mqTablet
+      max-width: 572px;
+    width: fit-content
     height: $carouselContainerHeight
     max-height: 400px
     position: absolute;
@@ -269,31 +276,41 @@ $carouselContainerHeight = $carouselHeight * 0.6 //modificar el alto de la image
     left: 0
     right: 0
     margin: auto
-    background-color: #f0f;
     z-index: 0
 
-.carousel__strip-small
-  left: -25%
+.carousel__strip-big
   @media mqDesk
-    left: -178px
+    left: -404px
+  left: -71%; //para centrar la tira de imagenes
+
+.carousel__strip-small
+  @media mqTablet
+    left: -100px
+  @media mqDesk
+    left: -404px
+  left: 0 //Para centrar el strip pequeño
   div
     width: $carouselContainerHeight * 1.2
 .skills
   PageMargin()
   SectionMargin()
   height: "calc(100vh - %s)" %($navbarHeight) //anota esto porque no lo sabia
+  min-height: 700px
   max-width: 1080px
   margin: 0 auto
   background-color: $darkColor
   &__icons
-    margin-top: 150px
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    @media mqTablet
+      grid-template-columns: repeat(4, 1fr)
+    margin-top: 80px
     text-align: center
     img
-      width: 42px
-      height: 42px
+      width: 60px
     span
-      display: inline-block;
-      margin: 20px
+      display: block
+      margin: 1em 0
 
 .about-me
   display: grid
@@ -302,6 +319,7 @@ $carouselContainerHeight = $carouselHeight * 0.6 //modificar el alto de la image
   grid-gap: 0.5em
   // margin-top: $navbarHeight
   height: 100vh
+  min-height: 600px
   background-color: $darkColor
   position: relative
   &__photo
@@ -333,10 +351,12 @@ $carouselContainerHeight = $carouselHeight * 0.6 //modificar el alto de la image
 .footer
   @media mqTablet
     height: auto
+    min-height: initial
     padding-bottom: 1em
     text-align: initial
   background-color: $lightColor
-  height: "calc(100vh - %s)" %($navbarHeight) //anota esto porque no lo sabia
+  height: 100vh
+  min-height: 600px
   &__grid
     display: flex
     flex-direction: column

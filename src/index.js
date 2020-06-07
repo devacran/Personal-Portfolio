@@ -7,4 +7,4 @@ async function load() {
     script()
 }
 window.addEventListener('load', load) //cuando carga por primera vez
-window.addEventListener('hashchange', router) //cuando hay un cambio en el hash
+window.addEventListener('hashchange', load) //cuando hay un cambio en el hash

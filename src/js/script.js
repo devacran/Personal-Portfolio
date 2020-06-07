@@ -7,24 +7,24 @@ function script() {
     const $stripBig = document.getElementById('carouselBig')
     const $sections = document.querySelectorAll('section')
     const $aboutTitle = document.getElementById('about')
+    const $projectTitle = document.getElementById('projectTitle')
+    const $projectDescription = document.getElementById('projectDescription')
+    const $carouselProjects = Array.from(
+        document.querySelectorAll('.carousel__project')
+    )
+
+    const projectsInfo = (id) => {
+        const projects = {}
+        $carouselProjects.map((item, n) => {
+            let projectDesription = item.getAttribute('description')
+            let projectName = item.getAttribute('name')
+            projects[n] = { name: projectName, description: projectDesription }
+        })
+        return projects[id]
+    }
     let moveSmall = 0
     let moveBig = 0
-
-    function move(direction) {
-        const smallImageWidth = parseInt($stripSmall.childNodes[1].clientWidth)
-        const bigImageWidth = parseInt($stripBig.childNodes[1].clientWidth)
-        if (direction === 'forwards') {
-            moveSmall = moveSmall - smallImageWidth
-            moveBig = moveBig - bigImageWidth
-            $stripSmall.style.transform = `translateX(${moveSmall.toString()}px)`
-            $stripBig.style.transform = `translateX(${moveBig.toString()}px)`
-        } else if (direction === 'backwards') {
-            moveSmall = smallImageWidth + moveSmall
-            moveBig = bigImageWidth + moveBig
-            $stripSmall.style.transform = `translateX(${moveSmall.toString()}px)`
-            $stripBig.style.transform = `translateX(${moveBig.toString()}px)`
-        }
-    }
+    let visibleProject = 1 //always the visible project the second
 
     function toggleMenu() {
         const menuWidth = parseInt($navbarSide.offsetWidth)
@@ -53,11 +53,45 @@ function script() {
     }
     if ($forwardBtn) {
         $forwardBtn.addEventListener('click', () => {
-            move('forwards')
+            moveCarousel('forwards')
         })
         $backwardBtn.addEventListener('click', () => {
-            move('backwards')
+            moveCarousel('backwards')
         })
+    }
+
+    function moveCarousel(direction) {
+        const smallImageWidth = parseInt($stripSmall.childNodes[1].clientWidth)
+        const bigImageWidth = parseInt($stripBig.childNodes[1].clientWidth)
+        if (direction === 'forwards') {
+            changeVisibleProjectInfo(direction)
+            moveSmall = moveSmall - smallImageWidth
+            moveBig = moveBig - bigImageWidth
+            $stripSmall.style.transform = `translateX(${moveSmall.toString()}px)`
+            $stripBig.style.transform = `translateX(${moveBig.toString()}px)`
+        } else if (direction === 'backwards') {
+            moveSmall = smallImageWidth + moveSmall
+            moveBig = bigImageWidth + moveBig
+            $stripSmall.style.transform = `translateX(${moveSmall.toString()}px)`
+            $stripBig.style.transform = `translateX(${moveBig.toString()}px)`
+            changeVisibleProjectInfo(direction)
+        }
+    }
+    function changeVisibleProjectInfo(direction) {
+        if (direction === 'forwards') {
+            console.log(visibleProject)
+            visibleProject++
+            console.log(visibleProject)
+        } else if (direction === 'backwards') {
+            console.log('pa atras')
+            visibleProject--
+        }
+        if (visibleProject >= $carouselProjects.length || visibleProject < 0) {
+            return
+        }
+        const info = projectsInfo(visibleProject)
+        $projectTitle.innerText = info.name
+        $projectDescription.innerText = info.description
     }
     $menu.addEventListener('click', toggleMenu)
 }

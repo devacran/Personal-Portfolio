@@ -1,47 +1,112 @@
 -
   var proyects = [
     {
-      title: "Hola",
-      href: 'direccion',
-      img: '../images/blog1.jpg'
+      title: "Movies Review Website",
+      href: 'https://devacran.github.io/Movies-Reviews-Website/',
+      img: '../images/pr/pr3.png',
+      description: 'Project made with CSS grid and JS Vanilla'
     },
     {
-      title: "Hola",
-      href: 'direccion',
-      img: '../images/blog2.jpg'
+      title: "Social Media Dashboard",
+      href: 'https://devacran.github.io/Social-Media-Dashboard/',
+      img: '../images/blog2.jpg',
+      description: 'Responsive Dashboard made with Stylus and JS vanila'
     },
     {
-      title: "Hola",
-      href: 'direccion',
-      img: '../images/blog1.jpg'
+      title: "Platzi Video",
+      href: '#',
+      img: '../images/pr/pr4.png',
+      description: 'The platzi video webpage'
+
     },
     {
-      title: "Hola",
-      href: 'direccion',
-      img: '../images/blog2.jpg'
+      title: "Product Webpage",
+      href: '#',
+      img: '../images/pr/pr6.png',
+      description: 'Product Webpage with Paypal'
+
     },
+    {
+      title: "Drakamon",
+      href: '#',
+      img: '../images/pr/pr5.png',
+      description: 'Responsive Design'
+
+    },
+    {
+      title: "Sinaloa",
+      href: '#',
+      img: '../images/pr/pr2.jpg',
+      description: 'Description'
+
+    },
+
   ]
   var menuItems = [
     {
       name: "Proyectos",
-      href: 'direccion',
+      href: '#projects',
     },
     {
       name: "Contacto",
-      href: 'direccion',
-    },
-    {
-      name: "Idioma",
-      href: 'direccion',
+      href: '#',
     },
     {
       name: "Acerca de mi",
       href: '#/about',
     },
+    {
+      name: "Idioma",
+      href: '#',
+    },
+
   ]
   
+  var skills = [
+    {
+      name: "Javascript",
+      img: '../images/javascript1.png',
+    },
+    {
+      name: "React",
+      img: '../images/react.png',
+    },
+    {
+      name: "Vue.js",
+      img: '../images/vue1.png',
+    },
+    {
+      name: "HTML",
+      img: '../images/html5.png',
+    },
+    {
+      name: "Webpack",
+      img: '../images/webpack.png',
+    },
+    {
+      name: "GitHUB",
+      img: '../images/github.png',
+    },
+    {
+      name: "CSS",
+      img: '../images/css.png',
+    },
+    {
+      name: "Stylus",
+      img: '../images/stylus.png',
+    },
+    {
+      name: "Sass",
+      img: '../images/sass1.png',
+    },
+
+  ]
+  
+
 mixin carousel
   .carousel
+    .portfolio__project-description
+      span#projectDescription Responsive Dashboard made with Stylus and JS vanila
     .carousel__container
       .carousel__overlay
       .carousel__strip.carousel__strip-small#carouselSmall
@@ -50,14 +115,14 @@ mixin carousel
             a(href=proyect.href)
               img(src=proyect.img alt=proyect.title)
     .carousel__central
-      .carousel__strip#carouselBig
+      .carousel__strip.carousel__strip-big#carouselBig
         each proyect in proyects
-          div
-            a(href=proyect.href)
+          div&attributes({'class': 'carousel__project','name': proyect.title, 'description': proyect.description })
+            a(target="_blank" href=proyect.href)
               img(src=proyect.img alt=proyect.title)
 
 mixin menu 
-  ul
+  ul.navbar__center
     each item in menuItems
       li
         a(href=item.href)=item.name

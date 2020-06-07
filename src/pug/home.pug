@@ -8,32 +8,36 @@ main
           p HELLO! <br><b>I'M MIGUEL DE LA ROSA</b> <br> WEB DEVELOPER
           span
             p Apasionated about technology and music        
-section.portfolio
+section.portfolio#projects
   .section-title.section-title--dark Featured Work
   .portfolio__proyect-title
     span
       button()#backward.portfolio__button
         img(src='../images/backwards.png')
-    span Platzi Video
+    span#projectTitle Social Media Dashboard
     span
       button()#forward.portfolio__button
         img(src='../images/forwards.png')
   +carousel
-  .portfolio__project-description
-    span Proyecto hecho con stylus, HTML y CSS
 section.skills
   .section-title Relevant Skills
   .section-subtitle
     span 
-    span WEB DEVELOP
+    span FRONTEND
     span I work with the best tecnologies
   .skills__icons
-    span: img(src='../images/angular.png')
-    span: img(src='../images/angular.png')
-    span: img(src='../images/angular.png')
-    span: img(src='../images/angular.png')
-    span: img(src='../images/angular.png')
-    span: img(src='../images/angular.png')
-    span: img(src='../images/angular.png')
-    span: img(src='../images/angular.png')
-  
+    each skill in skills 
+      span
+        img(src=skill.img)
+        span=skill.name
+footer
+  section.footer
+    div.footer__grid
+      .footer__item-1.section-title.section-title--dark Get in Touch <br> with me
+      .footer__item-2
+        span Correo <br> <b>migueeldrg@gmail.com</b> <br>
+        span Ubicacion <br> <b>Durango, MX</b> <br>
+      .footer__item-3
+        span DEVACRAN<br>
+      .footer__item-4
+        span All rights Reserved
