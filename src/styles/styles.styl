@@ -289,6 +289,7 @@ $carouselContainerHeight = $carouselHeight * 0.6 //modificar el alto de la image
   @media mqDesk
     left: -404px
   left: 0 //Para centrar el strip pequeño
+  left: -35vw
   div
     width: $carouselContainerHeight * 1.2
 .skills
@@ -332,11 +333,26 @@ $carouselContainerHeight = $carouselHeight * 0.6 //modificar el alto de la image
     font-weight: 100
     margin: auto 0
     text-align: right
-  &__text
+  &__text-container
     TextContent()
     margin: 1em 1em
     grid-column-start: 1
     grid-column-end: 4
+    @media mqTablet
+      display: flex
+  &__text
+    margin-bottom: 2em
+    @media mqTablet
+      width: 60%
+  &__social
+    display: flex;
+    align-items: center;
+    margin: auto;
+    text-align: center;
+    span
+      display: block;
+    div:last-child
+      margin-left: 1em
   &__title
     position: absolute
     right: 0
