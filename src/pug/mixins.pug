@@ -110,7 +110,7 @@
 
 mixin carousel
   .carousel
-    .portfolio__project-description
+    .portfolio__project-description.tanga
       span#projectDescription Responsive Dashboard made with Stylus and JS vanila
     .carousel__container
       .carousel__overlay
@@ -125,6 +125,13 @@ mixin carousel
           div&attributes({'class': 'carousel__project','name': proyect.title, 'description': proyect.description })
             a(target="_blank" href=proyect.href)
               img(src=proyect.img alt=proyect.title)
+    span
+      button()#backward.portfolio__button.portfolio__button--left
+        img(src='../images/left.png')
+    span
+      button()#forward.portfolio__button.portfolio__button--right
+        img(src='../images/right.png')
+
 
 mixin menu 
   ul.navbar__center
