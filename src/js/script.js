@@ -70,12 +70,18 @@ function script() {
     const smallImageWidth = parseInt($stripSmall.childNodes[1].clientWidth);
     const bigImageWidth = parseInt($stripBig.childNodes[1].clientWidth);
     if (direction === "forwards") {
+      if (visibleProject >= $carouselProjects.length - 1) {
+        return;
+      }
       changeVisibleProjectInfo(direction);
       moveSmall = moveSmall - smallImageWidth;
       moveBig = moveBig - bigImageWidth;
       $stripSmall.style.transform = `translateX(${moveSmall.toString()}px)`;
       $stripBig.style.transform = `translateX(${moveBig.toString()}px)`;
     } else if (direction === "backwards") {
+      if (visibleProject < 1) {
+        return;
+      }
       moveSmall = smallImageWidth + moveSmall;
       moveBig = bigImageWidth + moveBig;
       $stripSmall.style.transform = `translateX(${moveSmall.toString()}px)`;
