@@ -110,8 +110,8 @@
 
 mixin carousel
   .carousel
-    .portfolio__project-description.tanga
-      span#projectDescription Responsive Dashboard made with Stylus and JS vanila
+    a#projectLink(target='_blank' href='#').portfolio__project-description.tanga
+      div#projectDescription Responsive Dashboard made with Stylus and JS vanila
     .carousel__container
       .carousel__overlay
       .carousel__strip.carousel__strip-small#carouselSmall
@@ -122,7 +122,7 @@ mixin carousel
     .carousel__central
       .carousel__strip.carousel__strip-big#carouselBig
         each proyect in proyects
-          div&attributes({'class': 'carousel__project','name': proyect.title, 'description': proyect.description })
+          div&attributes({'class': 'carousel__project','name': proyect.title, 'description': proyect.description, 'link': proyect.href })
             a(target="_blank" href=proyect.href)
               img(src=proyect.img alt=proyect.title)
     span
