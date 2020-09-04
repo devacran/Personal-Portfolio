@@ -2,33 +2,64 @@ include mixins.pug
 main
   section.main-section
     div.hero
-      .hero__container
+      .hero__container#hero
         div.right-border.expandHeight
-        span 
-          p HELLO! <a href="#/about"><br><b>I'M MIGUEL DE LA ROSA</b></a> <br> WEB DEVELOPER
-          span
-            p Apasionated about technology and music        
+        h1
+          span Hello, I'm <br/>
+          span.hero__name 
+            span.miguel Miguel 
+            span.delarosa de la Rosa <br/>
+        h2.subtitle Frontend Developer
 section.portfolio#projects
-  .section-title.section-title--dark Featured Work
-  .portfolio__proyect-title
-    span#projectTitle.section-subtitle.section-subtitle--dark Social Media Dashboard
-  +carousel
+  h1.section-title.section-title--dark I love coding and there are some work i've made. 
+  .project.unu
+    .project__wrap
+      .project__container
+        .project__left
+          .project__left-wrap
+            .project__logo
+              img(src='../images/Unu.png')
+            h2.project__title Your event app
+            .border-bottom 
+            .project__description I’ve worked in this project for 56 years, i was responsable for UX design,
+              | frontent development and api integration
+            button.button.project__button 
+              a(href='https://unu.vercel.app/' target="_blank") View Project
+        .project__right
+          .project__image 
+            img(src='../images/unuApp.svg')
+  .project.dailysun
+    .project__wrap
+      .project__container
+        .project__left
+          .project__left-wrap
+            .project__logo
+              img(src='../images/dailysun2.png')
+            h2.project__title Weather for everyone
+            .border-bottom 
+            .project__description I’ve worked in this project for 56 years, i was responsable for UX design,
+              | frontent development and api integration
+            button.button.project__button 
+              a(href='https://dailysun.devacran.vercel.app/' target="_blank") View Project
+        .project__right
+          .project__image 
+            img(src='../images/dailysunApp.svg')
+      
 section.skills
-  .section-title Relevant Skills
-  .section-subtitle
-    //- span 
-    div FRONTEND
-    span I work with the best tecnologies
-  .skills__icons
-    each skill in skills 
-      span
-        img(src=skill.img)
-        span=skill.name
+  .skills__wrap
+    h1.section-title Relevant Skills
+    h2.section-subtitle Here is a selection of relevant technologies that I have experience with
+      //- span I work with the best tecnologies
+    .skills__icons
+      each skill in skills 
+        span
+          img(src=skill.img)
+          span=skill.name
 footer
   section.footer
     div.footer__grid
       .footer__item-1.section-title.section-title--dark Get in Touch <br> with me
-      .footer__item-2
+      .footer__item-2#footer_contact
         span Correo <br> <b>migueeldrg@gmail.com</b> <br>
         span Ubicacion <br> <b>Durango, MX</b> <br>
       .footer__item-3

@@ -1,18 +1,17 @@
 include mixins.pug
-nav
-  div.navbar
-    ul.navbar__left
-      li
-        span  
-          a(href="#/"): img(src='../images/logo.svg')
-      li
-        a(href='#') Blog
-    +menu
-    ul.navbar__right
-      li 
-        a#language()
-          span: img(src='../images/lang.svg')
-        a#menu(toggle='false')
-          span: img(src='../images/menu.svg')
-nav.navbar.navbar--side
-  +menu
+
+nav.navbar.navbar--show#navbar-menu
+ ul.navbar__left
+   li
+     span  
+       a(href="#/"): img(src='../images/logo.svg')
+   li
+     a(href='#') Blog
+ +menu
+ ul.navbar__right
+   li 
+     a ES
+     a#menu(toggle='false')
+       span: img(src='../images/menu.svg')
+nav.navbar.navbar--side.navbar--show
+ +menu

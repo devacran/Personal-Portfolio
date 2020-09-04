@@ -10,14 +10,19 @@
   height: $navbarHeight
   PageMargin()
   width: 100%;
-  max-width: 1080px;
   background-color: $darkColor
   color: $primaryColor
   box-sizing: border-box
-  z-index: 4
+  z-index: 8
+  opacity: 0
+  transform: translateY(-60px);
+  transition: all 0.2s ease-in-out
   ul
     align-items: center
     margin: 0
+  &--show
+    opacity: 1
+    transform: translateY(0px);
   &--side
     @media mqTablet
       display: none
@@ -54,7 +59,7 @@
         display: none
   &__center
     display: none
-    justify-content: space-evenly
+    justify-content: space-between
     @media mqTablet
       display: flex
     li:last-child
@@ -65,82 +70,138 @@
 .main-section
   PageMargin()
   SectionMargin()
+  margin: 0;
+  padding: 0 6.944vw 3.333vw;
   background-color: $darkColor
   color: $primaryColor
   height: 100vh
-
+  h2
+    text-align: left;
 
 .hero
   SubTitle(1)
-  margin: 30vh 0
+  height: "calc(100% - %s)" %($navbarHeight)
+  display: flex;
+  align-items: center;
+  @media mqDesk
+    position: fixed;
   p
     margin-top: 0
     margin-bottom: 0.5em
   p:last-child
     TextContent()
     margin-bottom: 0
+  h1
+    @media mqDesk
+      font-size: 10.4vw
+    margin: 50px 0
+    font-size: 18.7vw
+    line-height: 0.7;
+    color: #202121;
+    font-family: 'Oswald'
   &__container
-    display: flex
-
+    transition: all 0.2s ease-in-out
+  &__name
+    line-height: 1.2em
+.miguel
+  font-family: $specialFont
+  color: $primaryColor
+.delarosa
+  $specialFont
+  color: $primaryColor
+  @media mqDesk
+    font-size: 10.4vw
+  font-size: 18.7vw
+  font-weight: 600;
 
 .portfolio
-  PageMargin()
   SectionMargin()
   background-color: $lightColor
-  position: relative
-  overflow: hidden
-  height: "calc(100vh - %s)" %($navbarHeight)
-  min-height: 600px
-  &__proyect-title
-    text-align: center
-  &__project-description
-    @media mqTablet
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      max-width: 572px;
-      margin: 0 auto;
-      opacity: 0
-      top: 0
-      transition: 0.3s
-      z-index: 1
-      &:hover
-        cursor: pointer;
-        opacity: 1
-        color: black
-        font-weight: 700;
-    position: absolute;
+  position: relative;
+  h1
+    font-family: $primaryFont
+.project
+  width: 100%
+  height: 100vh;
+  color: $lightColor
+  box-sizing: border-box;
+  h2
+    margin-top: 0
+    margin-bottom: 10px
+    font-size: 10vw
     text-align: center;
-    bottom: -50px
-    right: 0
-    left: 0
+    font-family: $primaryFont
+    @media mqTablet
+      font-size: 5vw
+  &__container
+    display: grid;
+    grid-template-columns: 1fr
+    @media mqDesk
+      grid-template-columns: 1fr 1fr
+    height: 100%;
   &__button
-    position: absolute;
-    top: 43%
-    padding: 0 5px;
-    border: none
-    background: none
-    cursor: pointer;
-    opacity: 0.5
-    z-index: 1
-    &:focus
-      outline: none
-    &--left
-      left: -10px
-    &--right
-      right: -10px
+    margin-top: 20px
+  &__wrap
+    PageMargin()
+    max-width: 1080px
+    margin: 0 auto
+    height: 100%
+  &__left-wrap
+    display: grid;
+    place-items: center;
+    @media mqTablet
+      display: block
+  &__left
+    height: 100%
+    display: flex;
+    align-items: center;
+  &__description
+    TextContent()
+    color: $lightColor
+    text-align: center;
+    @media mqTablet
+      width: 70%
+      text-align: left;
+  &__right
+    display: flex;
+    justify-content: center
+    height: 100%
+  &__logo
+    width: 200px
+    margin-bottom: 50px
     img
-      width: 50px
-
-
+      width: 100%
+  &__image
+    display: none
+    @media mqDesk
+      display: block;
+    width: 300px
+    img
+      width: 100%
+      height: 100%
+.unu
+  background-color: #f57569
+  position: sticky;
+  top: 0;
+.dailysun
+  z-index: 1;
+  position: relative;
+  background-image: linear-gradient(45deg,#56cad5,#247ad4)
 .skills
-  PageMargin()
   SectionMargin()
+  PageMargin()
+  position: relative;
   height: "calc(100vh - %s)" %($navbarHeight) //anota esto porque no lo sabia
   min-height: 700px
-  max-width: 1080px
   margin: 0 auto
   background-color: $darkColor
+  border: 1px solid transparent
+  text-align: center;
+  h2
+    color: $text-content
+  &__wrap
+    max-width: 1080px
+    margin: 0 auto
   &__icons
     display: grid
     grid-template-columns: repeat(3, 1fr)
@@ -172,12 +233,9 @@
       height: 100%
       object-fit: cover
   &__description
-    SubTitle(1)
-    font-weight: 100
-    margin: auto 0
     text-align: right
+    padding: 0 10%
   &__text-container
-    TextContent()
     margin: 1em 1em
     grid-column-start: 1
     grid-column-end: 4
@@ -200,6 +258,8 @@
     position: absolute
     right: 0
     top: 0px
+    @media mqTablet
+      right: 2vw;
     height: 55px
     Title(1)
     margin: 0
@@ -216,6 +276,7 @@
     min-height: initial
     padding-bottom: 1em
     text-align: initial
+  position: relative;
   background-color: $lightColor
   height: 100vh
   min-height: 600px
@@ -233,8 +294,10 @@
     margin: 0 auto
     text-align: center
   &__item-1
+    font-size: 10vw
     @media mqTablet
       text-align: left
+      font-size: 3.5vw
   &__item-3
     SubTitle(2)
     color: $secondaryColor

@@ -4,11 +4,12 @@ module.exports = {
   entry: path.resolve(__dirname, "src", "index.js"),
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "main.js",
+    filename: "main.js"
   },
   devServer: {
-    port: 9000,
-    host: "192.168.0.108",
+    host: "0.0.0.0",
+    inline: true,
+    port: "3000"
   },
   module: {
     rules: [
@@ -16,43 +17,33 @@ module.exports = {
         test: /\.js?$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
-        },
+          loader: "babel-loader"
+        }
       },
-      // {
-      //     test: /\.css?$/,
-      //     exclude: /node_modules/,
-      //     use: ['style-loader', 'css-loader'],
-      // },
       {
         test: /\.styl$/,
-        loader: "style-loader!css-loader!stylus-loader",
+        loader: "style-loader!css-loader!stylus-loader"
       },
       {
         test: [/\.pug/],
         exclude: [/node_modules/, /public/, /dist/],
-        loaders: ["html-loader", "pug-html-loader"],
+        loaders: ["html-loader", "pug-html-loader"]
       },
-      // {
-      //     test: /\.html?$/i,
-      //     exclude: [/node_modules/, /public/, /dist/],
-      //     use: 'html-loader',
-      // },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
         exclude: [/node_modules/, /public/, /dist/],
         use: [
           {
-            loader: "file-loader",
-          },
-        ],
-      },
-    ],
+            loader: "file-loader"
+          }
+        ]
+      }
+    ]
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "public", "index.html"),
-      filename: path.resolve(__dirname, "dist", "index.html"),
-    }),
-  ],
+      filename: path.resolve(__dirname, "dist", "index.html")
+    })
+  ]
 };
