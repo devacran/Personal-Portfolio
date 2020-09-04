@@ -1,8 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap')
-@import url('http://db.onlinewebfonts.com/c/f1a22f6f15d272c7aa56da8b2c91f5e5?family=Circular+Std+Black');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
-@import url('https://db.onlinewebfonts.com/c/860c3ec7bbc5da3e97233ccecafe512e?family=Circular+Std+Book');
 
+@font-face {font-family: "Circular Std Black";
+  src: url("../fonts/CircularStdBlack/f1a22f6f15d272c7aa56da8b2c91f5e5.eot"); /* IE9*/
+  src: url("../fonts/CircularStdBlack/f1a22f6f15d272c7aa56da8b2c91f5e5.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("../fonts/CircularStdBlack/f1a22f6f15d272c7aa56da8b2c91f5e5.woff2") format("woff2"), /* chrome、firefox */
+  url("../fonts/CircularStdBlack/f1a22f6f15d272c7aa56da8b2c91f5e5.woff") format("woff"), /* chrome、firefox */
+  url("../fonts/CircularStdBlack/f1a22f6f15d272c7aa56da8b2c91f5e5.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url("../fonts/CircularStdBlack/f1a22f6f15d272c7aa56da8b2c91f5e5.svg#Circular Std Black") format("svg"); /* iOS 4.1- */
+}
+@font-face {font-family: "Circular Std Book";
+  src: url("../fonts/CircularStdBook/860c3ec7bbc5da3e97233ccecafe512e.eot"); /* IE9*/
+  src: url("../fonts/CircularStdBook/860c3ec7bbc5da3e97233ccecafe512e.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("../fonts/CircularStdBook/860c3ec7bbc5da3e97233ccecafe512e.woff2") format("woff2"), /* chrome、firefox */
+  url("../fonts/CircularStdBook/860c3ec7bbc5da3e97233ccecafe512e.woff") format("woff"), /* chrome、firefox */
+  url("../fonts/CircularStdBook/860c3ec7bbc5da3e97233ccecafe512e.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url("../fonts/CircularStdBook/860c3ec7bbc5da3e97233ccecafe512e.svg#Circular Std Book") format("svg"); /* iOS 4.1- */
+}
 //<----------------- Variables---------------->
 $primaryFont = 'Circular Std Black'
 $secondaryFont ='Prompt'
@@ -142,6 +156,8 @@ nav
   z-index: 40;
 
 button
+  TextContent()
+  font-family: 'Circular Std Book'
   background: none
   outline: none
   padding: 0

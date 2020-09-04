@@ -30,7 +30,7 @@ module.exports = {
         loaders: ["html-loader", "pug-html-loader"]
       },
       {
-        test: /\.(png|jpe?g|gif|svg)$/i,
+        test: /\.(png|jpe?g|gif|svg|eot|svg|ttf|woff|woff2)$/i,
         exclude: [/node_modules/, /public/, /dist/],
         use: [
           {
