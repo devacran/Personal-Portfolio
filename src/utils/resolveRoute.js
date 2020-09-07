@@ -1,6 +1,6 @@
-const resolveRoute = (route) => {
+const resolveRoute = route => {
   console.log(route);
-  if (route === "/" || route === "/about") {
+  if (route === "/" || route === "/about" || route === "/blog") {
     return route;
   } else {
     return "/";

@@ -1,6 +1,6 @@
-import about from '../pug/about.pug'
+import about from "../pug/about.pug";
 const About = () => {
-    return about
-}
+  return about;
+};
 
-export default About
+export default About;

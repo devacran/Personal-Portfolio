@@ -1,23 +1,36 @@
 -
-  var porfile__text = `
+  var bio = `
 
   `
   
-main  
-  .about-me-container 
-    section.about-me.slideInFromLeft
-      .about-me__photo: img(src='../images/porfile.jpeg')
-      h1.section-subtitle.about-me__description Hi, I’m Miguel, often known as @devacran. <br> A Fullstack Developer and Web Designer
-      .about-me__text-container
-        div.about-me__text
-          p I've working in a tech company for many years, developing in Javascript and React. Also I'm Engineer and Muscian and I love to create media to teach some from I know.
-          p I’m a very apassionated person and always threat my cleants with pleasure.
-          p Please feel free to contact. Would be lovely to hear from you.
-        div.about-me__social
-          div
-            span: img(src='../images/icongithub.png')
-            span GitHub
-          div
-            span: img(src='../images/icontwitter.png')
-            span Twitter
-  .about-me__title#about about me
+main 
+  section.about-me
+    .about-me__title#about about me 
+    .about-me__container 
+      .about-me__photo
+        .about-me__photo-wrap#myPhoto
+          .about-me__photo-overlay
+          img(src='../images/porfile.jpeg' )
+
+      .about-me__bigText
+        .about-me__bigText-container 
+          span HELLO THERE <br/>
+          span I AM MIGUEL <br/>
+          span ALSO KNOWN AS DEVACRAN <br/>
+          span FRONTEND DEVELOPER <br/>
+          span & WEB DESIGNER
+
+      .about-me__buttons 
+        button.button 
+          a(href='https://github.com/devacran/') GitHub
+        button.button 
+          a(href='https://twitter.com/devacran') Twitter
+      .about-me__bio 
+        p I’m a creative person non-stop learning, Ilaber 2018 and active Member of Platzi Master.
+        |I've worked in many projects developing in Javascript and React, always focused on the user.
+        |Also I'm an Engineer and Musician and I love to create media to teach some from what I know.
+        |Please feel free to contact me. Would be lovely to hear from you.
+
+
+      
+  

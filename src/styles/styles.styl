@@ -192,7 +192,6 @@
   SectionMargin()
   PageMargin()
   position: relative;
-  height: "calc(100vh - %s)" %($navbarHeight) //anota esto porque no lo sabia
   min-height: 700px
   margin: 0 auto
   background-color: $darkColor
@@ -208,7 +207,7 @@
     grid-template-columns: repeat(3, 1fr)
     @media mqTablet
       grid-template-columns: repeat(4, 1fr)
-    margin-top: 80px
+    margin: 80px 0px
     text-align: center
     img
       width: 60px
@@ -218,57 +217,114 @@
 
 
 .about-me
-  display: grid
-  grid-template-columns: 1fr 2fr 50px
-  grid-template-rows: 360px
-  grid-gap: 0.5em
-
-   // margin-top: $navbarHeight
-  height: 100vh
-  min-height: 600px
   background-color: $darkColor
-  position: relative
+  border: 1px solid transparent
+  &__container
+    display: grid;
+    grid-template-columns: 1fr
+    grid-template-areas: 'bigText' 'bio' 'buttons'
+    @media mqTablet
+      grid-gap: 30px;
+      grid-template-columns: 1fr 1fr
+      grid-template-rows: 21vw 17vw auto
+      grid-template-areas: 'photo bigText''photo buttons''bio bio'
+      padding: 10vw
+      margin-top: 0
   &__photo
+    position: fixed;
+    grid-area: photo
+    width: 100%
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    @media mqTablet
+      position: static;
+  &__photo-wrap
+    transform: scale(1.2);
     img
       width: 100%
       height: 100%
       object-fit: cover
-  &__description
-    text-align: right
-    padding: 0 10%
-  &__text-container
-    margin: 1em 1em
-    grid-column-start: 1
-    grid-column-end: 4
+      object-position: 0px -40px
+      @media mqTablet
+        object-position: 0px -100px
+  &__photo-overlay
+    display: block
+    @media mqDesk
+      display: none;
+    position: absolute;
+    top: 0
+    bottom: 0
+    right: 0
+    left: 0
+  &__bigText
+    position: relative;
+    font-size: 11vw
+    padding-top: 500px
+    background: rgb(23,23,23);
+    background: linear-gradient(0deg, rgba(23,23,23,1) 0%, rgba(23,23,23,0.7469362745098039) 27%, rgba(23,23,23,0) 41%);
     @media mqTablet
-      display: flex
-  &__text
-    margin-bottom: 2em
-    @media mqTablet
-      width: 60%
-  &__social
-    display: flex;
-    align-items: center;
-    margin: auto;
+      padding-top: 0
+      font-size: 5vw
+    grid-area: bigText
+    font-family: 'Circular Std Black'
     text-align: center;
-    span
-      display: block;
-    div:last-child
-      margin-left: 1em
+    line-height: 0.8
+    color: $primaryColor
+    &__container
+      position: relative
+      width: 38vw
+    & span:nth-child(1)
+      font-size: 1.13em
+      color: $secondaryColor
+    & span:nth-child(2)
+      font-size: 1.18em
+    & span:nth-child(3)
+      font-size: 0.52em
+      color: $secondaryColor
+    & span:nth-child(4)
+      font-size: 0.65em
+    & span:nth-child(5)
+      font-size: 0.90em
+  &__buttons
+    @media mqTablet
+      height: 100%;
+      flex-direction: row;
+      padding: 0 10%;
+      box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 120px;
+    justify-content: space-between;
+    position: relative;
+    grid-area: buttons
+    background-color: $darkColor;
+    width: 100%;
+  button
+    border-color: $primaryColor
+  &__bio
+    box-sizing: border-box;
+    position: relative;
+    grid-area: bio
+    background-color:  $darkColor;
+    width: 100%;
+    text-align: justify;
+    padding: 2em 8vw;
+    @media mqTablet
+      padding: 0
   &__title
     position: absolute
     right: 0
-    top: 0px
-    @media mqTablet
-      right: 2vw;
+    top: 80px
+    display: flex;
+    align-items: flex-end;
     height: 55px
     Title(1)
     margin: 0
-    padding: 0 70px;
     transform-origin: 100% 100%
-    transform: rotateZ(-90deg)
-.about-me-container
-  background-color: $darkColor
+    transform: rotate(-90deg)
+    z-index: 1
 
 
 .footer
@@ -281,6 +337,7 @@
   background-color: $lightColor
   height: 100vh
   min-height: 600px
+  TextContent()
   &__grid
     display: flex
     flex-direction: column
@@ -305,10 +362,19 @@
     @media mqTablet
       text-align: left
   &__item-2
-    TextContent()
+    a
+      color: $text-content
     margin: 10vh 0 30vh 0
     span:last-child
       display: block
       margin: 1em
     @media mqTablet
       margin: 0
+#myBlog //Temporal until you make your blog ;)
+  display: grid;
+  place-items: center
+  width: 100vw
+  height: 100vh;
+  font-size: 10vw;
+  color: $primaryColor
+  font-family: 'Circular Std Black'
