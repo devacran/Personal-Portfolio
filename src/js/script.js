@@ -19,7 +19,6 @@ function script() {
       if ($aboutTitle) {
         const aboutTitleHeight = $aboutTitle.offsetHeight + 25;
         $aboutTitle.style.transition = "0.5s";
-        // $aboutTitle.style.transform = `rotateZ(-90deg) translate(0px, -${aboutTitleHeight}px)`;
         $aboutTitle.style.transform = `rotateZ(-90deg) translate(0px, -${5}px)`;
       }
       $menu.setAttribute("toggle", "true");
@@ -47,7 +46,7 @@ function script() {
     },
     { threshold: [0.1, 0.8] }
   );
-  //observer.observe($portafolio);
+
   let s;
   const toggleNavbar = navbar => {
     const close = () => navbar.classList.remove("navbar--show");
@@ -59,6 +58,7 @@ function script() {
   let size, scroll;
 
   const zoomInOut = image => {
+    if (!image) return;
     const getRefSize = () => {
       size = window.getComputedStyle(image, null).transform;
       size = size.match(/\d+.\d+/)[0];
@@ -67,8 +67,6 @@ function script() {
     if (!size) {
       let size = getRefSize(image);
     }
-    console.log(window.getComputedStyle(image, null).transform);
-    console.log(size);
     const newScale = size - window.scrollY / 1000;
     image.style.transform = `matrix(${newScale}, 0, 0, ${newScale}, 0, 0)`;
   };

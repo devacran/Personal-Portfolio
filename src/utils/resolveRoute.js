@@ -1,6 +1,5 @@
 const resolveRoute = route => {
-  console.log(route);
-  if (route === "/" || route === "/about" || route === "/blog") {
+  if (route === "/" || route === "/about" || route === "/resources") {
     return route;
   } else {
     return "/";

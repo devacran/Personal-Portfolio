@@ -7,9 +7,15 @@ main
         h1
           span Hello, I'm <br/>
           span.hero__name 
-            span.miguel Miguel 
+            a(href='#/about'): span.miguel Miguel 
             span.delarosa de la Rosa <br/>
         h2.subtitle Frontend Developer
+        .hero__buttons 
+          span
+            a(href='https://linked.in/in/devacran'): img(src='../images/linkedin1.svg')
+          span
+            a(href='https://github.com/devacran'): img(src='../images/github1.svg')
+        
 section.portfolio#projects
   h1.section-title.section-title--dark I love coding and there are some work i've made. 
   .project.unu
@@ -59,8 +65,8 @@ footer
     div.footer__grid
       .footer__item-1.section-title.section-title--dark Get in touch <br> with me
       .footer__item-2#footer_contact
-        span Correo <br> <b><a href='mailto:migueeldrg@gmail.com'>migueeldrg@gmail.com</a></b> <br>
-        span Ubicacion <br> <b>Durango, MX</b> <br>
+        span Don't be shy <br> <b><a href='mailto:migueeldrg@gmail.com'>migueeldrg@gmail.com</a></b> <br>
+        span Location <br> <b>Durango, MX</b> <br>
       .footer__item-3
         span DEVACRAN<br>
       .footer__item-4
