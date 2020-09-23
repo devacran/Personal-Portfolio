@@ -50,7 +50,20 @@ section.portfolio#projects
         .project__right
           .project__image 
             img(src='../images/dailysunApp.svg')
-      
+    .project-grid
+      h1.section-title.section-title--dark Other projects 
+      .project-grid__container 
+        +project-card("Pokedom", "React", "https://github.com/devacran/pokemon-app")
+        +project-card("hola", "mundo")
+        +project-card("hola", "mundo")
+        +project-card("hola", "mundo")
+        +project-card("hola", "mundo")
+        +project-card("hola", "mundo")
+      div.project-grid__seemore 
+        span See more on 
+        button.button.project__button 
+          a(href='https://github.com/devacran/' target="_blank") GitHub
+   
 section.skills
   .skills__wrap
     h1.section-title Relevant Skills
