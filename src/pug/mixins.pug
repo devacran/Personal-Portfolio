@@ -127,32 +127,6 @@
     },
 
   ]
-  
-
-mixin carousel
-  .carousel
-    a#projectLink(target='_blank' href='#').portfolio__project-description.tanga
-      div#projectDescription Responsive Dashboard made with Stylus and JS vanila
-    .carousel__container
-      .carousel__overlay
-      .carousel__strip.carousel__strip-small#carouselSmall
-        each proyect in proyects
-          div
-            a(href=proyect.href)
-              img(src=proyect.img alt=proyect.title)
-    .carousel__central
-      .carousel__strip.carousel__strip-big#carouselBig
-        each proyect in proyects
-          div&attributes({'class': 'carousel__project','name': proyect.title, 'description': proyect.description, 'link': proyect.href })
-            a(target="_blank" href=proyect.href)
-              img(src=proyect.img alt=proyect.title)
-    span
-      button()#backward.portfolio__button.portfolio__button--left
-        img(src='../images/left.png')
-    span
-      button()#forward.portfolio__button.portfolio__button--right
-        img(src='../images/right.png')
-
 
 mixin menu 
   ul.navbar__center
@@ -160,12 +134,13 @@ mixin menu
       li
         a(href=item.href)=item.name
 
-mixin project-card($title, $subtitle, $link, $img) 
+mixin project-card(title, subtitle, link, img) 
   figure.project-card
     .project-card__overlay
-      img(src='../images/awg2020.png')
+      img(src=`../images/pr/${img}`)
     figcaption
-      div=$title
-      div=$subtitle
+      div.project-card__header
+        div=title
+        div=subtitle
       button.button.project-card__button
-        a(href=$link target="_blank") View Project
+        a(href=link target="_blank") View Project

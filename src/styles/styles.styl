@@ -249,16 +249,21 @@
     figcaption
       opacity: 1
   figcaption
-    transition: 0.2s
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
     opacity: 0;
-  & div:nth-child(1)
-    font-size: 35px;
-    font-weight: bold;
-  & div:nth-child(2)
-    font-size: 25px;
+    transition: 0.2s
+  &__header
+    & div:nth-child(1)
+      font-size: 35px;
+      font-weight: bold;
+    & div:nth-child(2)
+      font-size: 25px;
   &__button
-    margin-top: 70px;
     cursor: pointer;
     border-color: $darkColor;
     a
@@ -270,7 +275,7 @@
     left: 0;
     right: 0;
     border-radius: 20px;
-    background-color: red;
+    background-color: $text-color;
     opacity: 1;
 
 .skills
@@ -284,6 +289,9 @@
   text-align: center;
   h2
     color: $text-content
+    @media mqDesk
+      font-size: 2vw;
+
   &__wrap
     max-width: 1080px
     margin: 0 auto
@@ -291,7 +299,7 @@
     display: grid
     grid-template-columns: repeat(3, 1fr)
     @media mqTablet
-      grid-template-columns: repeat(4, 1fr)
+      grid-template-columns: repeat(6, 1fr)
     margin: 80px 0px
     text-align: center
     img
