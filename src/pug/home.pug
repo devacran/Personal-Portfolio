@@ -68,11 +68,8 @@ section.skills
   .skills__wrap
     h1.section-title Relevant Skills
     h2.section-subtitle Here is a selection of relevant technologies that I have experience with
-    .skills__icons
-      each skill in skills 
-        span
-          img(src=skill.img)
-          span=skill.name
+    +skill-carousel
+    
 footer
   section.footer
     div.footer__grid

@@ -1,3 +1,4 @@
+import Glide from "@glidejs/glide";
 function script() {
   const isMobile = window.innerWidth < 720;
   const $menu = document.getElementById("menu");
@@ -71,5 +72,6 @@ function script() {
     image.style.transform = `matrix(${newScale}, 0, 0, ${newScale}, 0, 0)`;
   };
   isMobile && window.addEventListener("scroll", () => zoomInOut($myPhoto));
+  new Glide(".glide").mount();
 }
 export default script;

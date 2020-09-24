@@ -12,6 +12,7 @@
     "license": "ISC",
     "dependencies": {
         "@babel/core": "^7.10.2",
+        "@glidejs/glide": "^3.4.1",
         "pug-html-loader": "^1.1.5"
     },
     "devDependencies": {

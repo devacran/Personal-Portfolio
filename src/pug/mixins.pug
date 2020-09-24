@@ -102,6 +102,18 @@
       img: '../images/vue1.png',
     },
     {
+      name: "Javascript",
+      img: '../images/javascript1.png',
+    },
+    {
+      name: "React",
+      img: '../images/react.png',
+    },
+    {
+      name: "Vue.js",
+      img: '../images/vue1.png',
+    },
+    {
       name: "HTML",
       img: '../images/html5.png',
     },
@@ -120,6 +132,14 @@
     {
       name: "Stylus",
       img: '../images/stylus.png',
+    },
+    {
+      name: "Sass",
+      img: '../images/sass1.png',
+    },
+    {
+      name: "Sass",
+      img: '../images/sass1.png',
     },
     {
       name: "Sass",
@@ -144,3 +164,47 @@ mixin project-card(title, subtitle, link, img)
         div=subtitle
       button.button.project-card__button
         a(href=link target="_blank") View Project
+        
+mixin skill-carousel 
+  <div class="glide">
+    <div class="glide__track" data-glide-el="track">
+      <ul class="glide__slides">
+        <li class="glide__slide ">
+          <div class='skills__icons'>
+            +skill-item('Javascript', '../images/javascript1.png')
+            +skill-item('React', '../images/react.png')
+            +skill-item('Redux', '../images/redux1.png')
+            +skill-item('VueJs', '../images/vue1.png')
+            +skill-item('Angular', '../images/angular.png')
+            +skill-item('NodeJS', '../images/node1.png')
+            +skill-item('Express', '../images/exp1.png')
+            +skill-item('PassportJS', '../images/passport.png')
+            +skill-item('MongoDB', '../images/mongo1.png')
+            +skill-item('Stylus', '../images/stylus.png')
+            +skill-item('Sass', '../images/sass1.png')
+            +skill-item('Webpack', '../images/webpack.png')
+          </div>
+        </li>
+        <li class="glide__slide ">
+          <div class='skills__icons'>
+            +skill-item('HTML', '../images/html5.png')
+            +skill-item('PUG', '../images/javascript1.png')
+            +skill-item('CSS', '../images/css.png')
+            +skill-item('Axios', '../images/javascript1.png')
+            +skill-item('GitHub', '../images/github.png')
+            +skill-item('TypeScript', '../images/typescript1.png')
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="glide__bullets" data-glide-el="controls[nav]">
+      <button class="glide__bullet" data-glide-dir="=0"></button>
+      <button class="glide__bullet" data-glide-dir="=1"></button>
+      <button class="glide__bullet" data-glide-dir="=2"></button>
+    </div>
+  </div>
+  
+mixin skill-item(name, img) 
+  span
+    img(src=img)
+    span=name
