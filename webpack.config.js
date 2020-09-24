@@ -25,6 +25,10 @@ module.exports = {
         loader: "style-loader!css-loader!stylus-loader"
       },
       {
+        test: /\.css$/,
+        loader: ["style-loader", "css-loader"]
+      },
+      {
         test: [/\.pug/],
         exclude: [/node_modules/, /public/, /dist/],
         loaders: ["html-loader", "pug-html-loader"]

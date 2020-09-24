@@ -1,3 +1,5 @@
+import "./styles/glide.core.css";
+import "./styles/glide.theme.css";
 import "./styles/styles.styl";
 import router from "./routes/index.js";
 import script from "./js/script.js";
