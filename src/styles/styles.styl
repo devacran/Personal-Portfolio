@@ -126,16 +126,17 @@
   h1
     font-family: $primaryFont
 .project
-  width: 100%
-  height: auto;
-  color: $lightColor
-  box-sizing: border-box;
+  PageMargin()
+  max-width: 1080px
+  margin: 0 auto
+  height: 100vh
   h2
     margin-top: 0
     margin-bottom: 10px
     font-size: 10vw
     text-align: center;
     font-family: $primaryFont
+    color: $lightColor;
     @media mqTablet
       font-size: 5vw
       text-align: left;
@@ -149,11 +150,6 @@
     margin-top: 20px
     a
       color: $lightColor
-  &__wrap
-    PageMargin()
-    max-width: 1080px
-    margin: 0 auto
-    height: 100vh
   &__left-wrap
     display: grid;
     place-items: center;
@@ -187,17 +183,21 @@
     img
       width: 100%
       height: 100%
-
-
 .unu
   background-color: #f57569
-  position: sticky;
-  top: 0;
+
 .dailysun
-  z-index: 1;
-  position: relative;
   background-image: linear-gradient(45deg,#56cad5,#247ad4)
 
+.project-container
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  z-index: 1;
+  position: relative;
+  &--sticky
+    position: sticky;
+    top: 0;
 .project-grid
   height: auto;
   padding: 60px 0;
