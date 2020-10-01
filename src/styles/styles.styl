@@ -147,9 +147,13 @@
       grid-template-columns: 1fr 1fr
     height: 100%;
   &__button
+    font-size: 18px;
+    text-align: center;
+    display: block;
     margin-top: 20px
-    a
-      color: $lightColor
+    color: $lightColor
+    line-height: 2.4em;
+    box-sizing: border-box;
   &__left-wrap
     display: grid;
     place-items: center;
@@ -264,10 +268,14 @@
     & div:nth-child(2)
       font-size: 25px;
   &__button
-    cursor: pointer;
+    display: block;
+    box-sizing: border-box;
+    font-size: 18px;
+    text-align: center;
+    line-height: 2.4em;
+    color: $darkColor;
     border-color: $darkColor;
-    a
-      color: $darkColor;
+    cursor: pointer;
   &__overlay
     position: absolute;
     top: 0;

@@ -9,7 +9,7 @@ main
           span.hero__name 
             a(href='#/about'): span.miguel Miguel 
             span.delarosa de la Rosa <br/>
-        h2.subtitle Frontend Developer
+        h2.subtitle Front-end Developer
         .hero__buttons 
           span
             a(href='https://linked.in/in/devacran'): img(src='../images/linkedin1.svg')
@@ -29,8 +29,7 @@ section.portfolio#projects
             .border-bottom 
             .project__description Unu is an event website builder. It was built in collaboration with others amazing enginners members of Platzi Master. <br/>
               | I was responsible for frontend development and api integration.
-            button.button.project__button 
-              a(href='https://unu.vercel.app/' target="_blank") View Project
+            a.button.project__button(href='https://unu.vercel.app/' target="_blank") View Project
         .project__right
           .project__image 
             img(src='../images/unuApp.svg')
@@ -45,8 +44,7 @@ section.portfolio#projects
             .border-bottom 
             .project__description As a personal project, Dailysun is a weather portal focused in accesibility. <br/>
               | I built this app beautiful in JS Vanilla and Sass. 
-            button.button.project__button 
-              a(href='https://dailysun.devacran.vercel.app/' target="_blank") View Project
+            a.button.project__button(href='https://dailysun.devacran.vercel.app/' target="_blank") View Project
         .project__right
           .project__image 
             img(src='../images/dailysunApp.svg')
@@ -54,11 +52,11 @@ section.portfolio#projects
       h1.section-title.section-title--dark Other projects 
       .project-grid__container 
         +project-card("My Portfolio", "Javascript/Stylus", "https://devacran.vercel.app", "pr1.png")
-        +project-card("Pokedom", "React", "https://github.com/devacran/pokemon-app", "pr2.png")
-        +project-card("SM Dashboard", "Html/Stylus", "https://devacran.github.io/Social-Media-Dashboard/", "pr3.png")
-        +project-card("Restaurant Store", "Javascript/Stylus", "https://restaurant-landing-page.vercel.app", "pr4.png")
         +project-card("Web Design Agency", "Pug/Stylus", "https://darclick.com", "pr5.png")
-        +project-card("Rick & Morty App", "React", "https://github.com/devacran/rick-and-morty-finder", "pr6.png")
+        +project-card("Natstore", "Vue.js/Sass", "https://devacran.github.io/Natstore-vuejs/", "pr6.png")
+        +project-card("Pokedom", "React", "https://github.com/devacran/pokemon-app", "pr2.png")
+        +project-card("Restaurant Store", "Javascript/Stylus", "https://restaurant-landing-page.vercel.app", "pr4.png")
+        +project-card("SM Dashboard", "Html/Stylus", "https://devacran.github.io/Social-Media-Dashboard/", "pr3.png")
       div.project-grid__seemore 
         span See more on 
         button.button.project__button 
