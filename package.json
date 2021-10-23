@@ -1,33 +1,32 @@
 {
-    "name": "portfolio",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "start": "webpack-dev-server --mode development",
-        "build": "webpack --mode production",
-        "prueba": "webpack-dev-server ./src/index.js -o -/dist/perro.js --mode development"
-    },
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "@babel/core": "^7.10.2",
-        "@glidejs/glide": "^3.4.1"
-    },
-    "devDependencies": {
-        "@babel/plugin-transform-runtime": "^7.10.1",
-        "@babel/preset-env": "^7.10.2",
-        "babel-loader": "^8.1.0",
-        "css-loader": "3.5.3",
-        "file-loader": "^6.0.0",
-        "html-loader": "^1.1.0",
-        "html-webpack-plugin": "^4.3.0",
-        "pug-html-loader": "^1.1.5",
-        "style-loader": "1.2.1",
-        "stylus": "^0.54.7",
-        "stylus-loader": "^3.0.2",
-        "webpack": "^4.43.0",
-        "webpack-cli": "^4.9.1",
-        "webpack-dev-server": "^4.3.1"
-    }
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode development",
+    "build": "webpack --mode production"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@glidejs/glide": "^3.4.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/plugin-transform-runtime": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.4.0",
+    "file-loader": "^6.2.0",
+    "html-loader": "^3.0.0",
+    "html-webpack-plugin": "^5.4.0",
+    "pug-html-loader": "^1.1.5",
+    "style-loader": "^3.3.1",
+    "stylus": "^0.55.0",
+    "stylus-loader": "^6.2.0",
+    "webpack": "^5.59.1",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.3.1"
+  }
 }
