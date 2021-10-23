@@ -32,15 +32,6 @@ module.exports = {
         exclude: [/node_modules/, /public/, /dist/],
         use: ["html-loader", "pug-html-loader"],
       },
-      {
-        test: /\.(png|jpe?g|gif|svg|eot|svg|ttf|woff|woff2)$/i,
-        exclude: [/node_modules/, /public/, /dist/],
-        use: [
-          {
-            loader: "file-loader",
-          },
-        ],
-      },
     ],
   },
   plugins: [
